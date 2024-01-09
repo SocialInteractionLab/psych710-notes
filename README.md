@@ -1,5 +1,5 @@
-# Psych 252 book: Statistical Methods for Behavioral and Social Sciences
+# Statistical Methods II 
 
-This book contains the RMarkdown notes for the 2024 version of the course. 
+This is a lightly customized clone of Tobi Gerstenberg's [PSYCH 252](https://psych252.github.io/psych252book/) course notes, adapted for PSYCH 710 at UW-Madison.
 
-If you have any questions about the notes, please feel free to contact me at [gerstenberg@stanford.edu](mailto:gerstenberg@stanford.edu). 
+If you have any questions about the notes, please feel free to contact me at [rdhawkins@wisc.edu](mailto:rdhawkins@wisc.edu). 
