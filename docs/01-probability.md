@@ -1,4 +1,4 @@
-# Probability and causality
+# Probability
 
 ## Load packages, load data, set theme
 
@@ -32,10 +32,23 @@ opts_chunk$set(comment = "",
                fig.show = "hold")
 ```
 
+## Learning goals
+
+I like to think of statistics as "applied epistemology", the art of making precise statements about what we can and can't "know" from limited and noisy observations.
+When we're trying to do science under these conditions, we're usually expressing our (lack of) knowledge as *uncertainty*.
+We're often not sure whether there's really an effect in our experiments, or how big it might be.
+We can measure a number, but we know that if we did the experiment again, we would get a slightly different number.
+*Probability theory* gives us a language for talking about these concepts in a less hand-wavy way; it helps us *quantify* uncertainty.
+Probabilities are the conceptual foundation of everything we're going to do in this course, and we're going to start out by learning to look at the phenomena from PSYCH 610 from a different perspective.
+In this notebook, we're going to:
+
+* Define foundational probability concepts like sample spaces, conditional probability, and the law of total probability.
+* Consider data-generating processes for simple scenarios like drawing balls from an urn.
+* Gain intuition for concepts like the law of large numbers.
 
 ## Counting
 
-Imagine that there are three balls in an urn. The balls are labeled 1, 2, and 3. Let's consider a few possible situations. 
+Imagine that there are three balls in an urn. The balls are labeled 1, 2, and 3. Let's consider a few possible situations.
 
 
 ```r
@@ -106,8 +119,8 @@ I've generated the figures below using the `DiagrammeR` package. It's a powerful
 <div class="figure">
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0a33b52343be02cba88f" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-0a33b52343be02cba88f">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {11 12 13}\n  2 -> {21 22 23}\n  3 -> {31 32 33}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  11 [label = \"1\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  22 [label = \"2\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  33 [label = \"3\"]\n    \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-86e8e546171aa432e165" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-86e8e546171aa432e165">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {11 12 13}\n  2 -> {21 22 23}\n  3 -> {31 32 33}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  11 [label = \"1\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  22 [label = \"2\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  33 [label = \"3\"]\n    \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:unnamed-chunk-4)Drawing two marbles out of an urn __with__ replacement.</p>
@@ -116,8 +129,8 @@ I've generated the figures below using the `DiagrammeR` package. It's a powerful
 <div class="figure">
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b0369cd3ec725ee9905b" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b0369cd3ec725ee9905b">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {12 13}\n  2 -> {21 23}\n  3 -> {31 32}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9d42787cd46d269ae884" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-9d42787cd46d269ae884">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {12 13}\n  2 -> {21 23}\n  3 -> {31 32}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:unnamed-chunk-5)Drawing two marbles out of an urn __without__ replacement.</p>
@@ -305,8 +318,8 @@ df.suspects %>%
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8d4c576d9a75c5a8d47a" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8d4c576d9a75c5a8d47a">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 9,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"p(female)\"]\n  1 -> 3 [label = \"p(male)\"]\n  2 -> 4 [label = \"p(revolver | female)\"] \n  3 -> 4 [label = \"p(revolver | male)\"]\n  \n  \n\n  # labels for each node\n  1 [label = \"Gender?\"]\n  2 [label = \"If female\nuse revolver?\"]\n  3 [label = \"If male\nuse revolver?\"]\n  4 [label = \"Revolver\nused?\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b380aaed2e9f78476f44" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b380aaed2e9f78476f44">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 9,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"p(female)\"]\n  1 -> 3 [label = \"p(male)\"]\n  2 -> 4 [label = \"p(revolver | female)\"] \n  3 -> 4 [label = \"p(revolver | male)\"]\n  \n  \n\n  # labels for each node\n  1 [label = \"Gender?\"]\n  2 [label = \"If female\nuse revolver?\"]\n  3 [label = \"If male\nuse revolver?\"]\n  4 [label = \"Revolver\nused?\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ## Probability operations
@@ -353,8 +366,8 @@ df.cards %>%
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6cfeb7aacee699943743" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6cfeb7aacee699943743">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 10,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"ill\"]\n  1 -> 3 [label = \"healthy\"]\n  2 -> 4 [label = \"test +\"] \n  2 -> 5 [label = \"test -\"]\n  3 -> 6 [label = \"test +\"]\n  3 -> 7 [label = \"test -\"]\n  \n\n  # labels for each node\n  1 [label = \"10000\npeople\"]\n  2 [label = \"100\"]\n  3 [label = \"9900\"]\n  4 [label = \"95\"]\n  5 [label = \"5\"]\n  6 [label = \"495\"]\n  7 [label = \"9405\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fdc698dc3cefe25d13a5" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-fdc698dc3cefe25d13a5">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 10,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"ill\"]\n  1 -> 3 [label = \"healthy\"]\n  2 -> 4 [label = \"test +\"] \n  2 -> 5 [label = \"test -\"]\n  3 -> 6 [label = \"test +\"]\n  3 -> 7 [label = \"test -\"]\n  \n\n  # labels for each node\n  1 [label = \"10000\npeople\"]\n  2 [label = \"100\"]\n  3 [label = \"9900\"]\n  4 [label = \"95\"]\n  5 [label = \"5\"]\n  6 [label = \"495\"]\n  7 [label = \"9405\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ## Getting Bayes right matters
@@ -442,44 +455,7 @@ p.V_given_H
 [1] 0.6153846
 ```
 
-## Building a Bayesis
 
-### Dice example
-
-
-```r
-# prior
-p.four = 0.5
-p.six = 0.5
-
-# possibilities 
-df.possibilities = tibble(observation = 1:6,
-                          p.four = c(rep(1/4, 4), rep(0, 2)),
-                          p.six = c(rep(1/6, 6)))
-
-# data
-# data = c(4)
-# data = c(4, 2, 1)
-data = c(4, 2, 1, 3, 1)
-# data = c(4, 2, 1, 3, 1, 5)
-
-# likelihood
-p.data_given_four = prod(df.possibilities$p.four[data])
-p.data_given_six = prod(df.possibilities$p.six[data])
-
-# posterior
-p.four_given_data = (p.data_given_four * p.four) /  
-  ((p.data_given_four * p.four) + 
-     (p.data_given_six * p.six))
-
-p.four_given_data
-```
-
-```
-[1] 0.8836364
-```
-
-Given this data $d$ = [4, 2, 1, 3, 1], there is a 88% chance that the four sided die was rolled rather than the six sided die. 
 
 ## Additional resources
 
