@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # configure your name and email if you have not done so
-git config --global user.email "hawkrobe@gmail.com"
-git config --global user.name "Robert Hawkins"
+git config user.email "hawkrobe@gmail.com"
+git config user.name "Robert Hawkins"
 
 # clone the repository to the book-output directory
 git clone -b master \
@@ -13,4 +13,4 @@ git rm -rf *
 cp -r ../docs/* ./
 git add --all *
 git commit -m "Update the book"
-git push -q origin master
+git push -q origin gh-pages
