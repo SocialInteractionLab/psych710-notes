@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # configure your name and email if you have not done so
-git config --global user.email "gerstenberg@stanford.edu"
-git config --global user.name "Tobias Gerstenberg"
+git config --global user.email "hawkrobe@gmail.com"
+git config --global user.name "Robert Hawkins"
 
 # clone the repository to the book-output directory
 git clone -b master \
