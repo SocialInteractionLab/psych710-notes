@@ -1,8 +1,8 @@
 --- 
 title: "Psych 252: Statistical Methods for Behavioral and Social Sciences"
 author: "Tobias Gerstenberg"
-date: "2024-01-06"
-book_filename: "psych252"
+date: "2024-01-09"
+book_filename: "psych710"
 language:
   ui:
     chapter_name: "Chapter "
@@ -13,8 +13,8 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: psych252/psych252book
-description: "Course notes for Psych 252."
+github-repo: SocialInteractionLab/psych710-notes
+description: "Course notes for Psych 710."
 ---
 
 # Preface {-}

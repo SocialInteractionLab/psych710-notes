@@ -1,3 +1,4 @@
+fig:hiding
 fig:anscombe
 fig:healy
 fig:datasaurus
@@ -271,6 +272,7 @@ t-test-by-hand
 confidence-intervals
 mean_cl_boot-explained
 additional-resources-6
+misc-3
 datacamp-1
 session-info-7
 modeling-data
@@ -281,7 +283,7 @@ sampling-distributions-for-median-and-mean
 residuals-need-to-be-normally-distributed-not-the-data-itself
 hypothesis-testing-one-sample-t-test
 building-a-sampling-distribution-of-pre
-misc-3
+misc-4
 additional-resources-7
 reading
 datacamp-2
@@ -298,7 +300,7 @@ calculate-the-sum-of-squared-errors-of-each-model
 credit-example
 additional-resources-8
 datacamp-3
-misc-4
+misc-5
 session-info-9
 linear-model-2
 learning-goals-3
@@ -326,7 +328,7 @@ visualization-3
 hypothesis-test
 additional-resources-9
 datacamp-4
-misc-5
+misc-6
 session-info-10
 references
 linear-model-3
@@ -357,7 +359,7 @@ skill-factor
 two-way-anova-with-interaction
 additional-resources-10
 datacamp-5
-misc-6
+misc-7
 session-info-11
 linear-model-4
 load-packages-and-set-plotting-theme-6
@@ -371,7 +373,7 @@ post-hoc-tests
 understanding-dummy-coding
 understanding-sum-coding
 additional-resources-11
-misc-7
+misc-8
 session-info-12
 power-analysis
 learning-goals-5
@@ -405,7 +407,7 @@ practice-2-simulation-of-an-interaction-effect
 additional-resources-12
 datacamp-6
 cheatsheets-5
-misc-8
+misc-9
 session-info-13
 model-comparison
 learning-goals-6
@@ -475,7 +477,7 @@ visualize-result
 additional-resources-14
 books
 tutorials-1
-misc-9
+misc-10
 session-info-15
 linear-mixed-effects-models-1
 learning-goals-8
@@ -558,7 +560,7 @@ calculate-the-models-likelihood
 testing-hypotheses
 logistic-mixed-effects-model
 additional-information
-misc-10
+misc-11
 datacamp-7
 session-info-20
 bayesian-data-analysis-1
@@ -713,12 +715,9 @@ reporting-statistical-results-using-rmarkdown
 some-concrete-example
 frequentist-statistics
 simple-regression
+additional-resources-21
+misc-12
 session-info-25
 cheatsheets-6
 statistics
 r
-breakout-room-exercise
-additional-resources-21
-misc-11
-misc-12
-fig:hiding

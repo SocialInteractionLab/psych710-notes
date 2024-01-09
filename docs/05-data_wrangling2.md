@@ -20,6 +20,14 @@ library("knitr") # for rendering the RMarkdown file
 library("tidyverse") # for data wrangling 
 ```
 
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
+```
+
 ## Settings
 
 
@@ -1019,7 +1027,7 @@ df.csv = read_csv("data/movies.csv")
 
 ```
 Rows: 2961 Columns: 11
-── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Delimiter: ","
 chr (3): title, genre, director
 dbl (8): year, duration, gross, budget, cast_facebook_likes, votes, reviews,...
@@ -1142,9 +1150,9 @@ save(df.test, df.starwars, file = "data/test_starwars.RData")
 
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -1153,27 +1161,27 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [1] lubridate_1.9.2 forcats_1.0.0   stringr_1.5.0   dplyr_1.1.4    
  [5] purrr_1.0.2     readr_2.1.4     tidyr_1.3.0     tibble_3.2.1   
- [9] ggplot2_3.4.4   tidyverse_2.0.0 knitr_1.45     
+ [9] ggplot2_3.4.4   tidyverse_2.0.0 knitr_1.42     
 
 loaded via a namespace (and not attached):
- [1] bit_4.0.5        gtable_0.3.4     jsonlite_1.8.8   crayon_1.5.2    
- [5] compiler_4.3.2   tidyselect_1.2.0 parallel_4.3.2   jquerylib_0.1.4 
- [9] scales_1.3.0     yaml_2.3.8       fastmap_1.1.1    R6_2.5.1        
-[13] generics_0.1.3   bookdown_0.37    munsell_0.5.0    bslib_0.6.1     
-[17] pillar_1.9.0     tzdb_0.4.0       rlang_1.1.2      utf8_1.2.4      
-[21] stringi_1.8.3    cachem_1.0.8     xfun_0.41        sass_0.4.8      
-[25] bit64_4.0.5      timechange_0.2.0 cli_3.6.2        withr_2.5.2     
-[29] magrittr_2.0.3   digest_0.6.33    grid_4.3.2       vroom_1.6.5     
-[33] hms_1.1.3        lifecycle_1.0.4  vctrs_0.6.5      evaluate_0.23   
-[37] glue_1.6.2       fansi_1.0.6      colorspace_2.1-0 rmarkdown_2.25  
-[41] tools_4.3.2      pkgconfig_2.0.3  htmltools_0.5.7 
+ [1] bit_4.0.5        gtable_0.3.3     jsonlite_1.8.4   crayon_1.5.2    
+ [5] compiler_4.3.0   tidyselect_1.2.0 parallel_4.3.0   jquerylib_0.1.4 
+ [9] scales_1.3.0     yaml_2.3.7       fastmap_1.1.1    R6_2.5.1        
+[13] generics_0.1.3   bookdown_0.34    munsell_0.5.0    bslib_0.4.2     
+[17] pillar_1.9.0     tzdb_0.4.0       rlang_1.1.1      utf8_1.2.3      
+[21] stringi_1.7.12   cachem_1.0.8     xfun_0.39        sass_0.4.6      
+[25] bit64_4.0.5      timechange_0.2.0 cli_3.6.1        withr_2.5.0     
+[29] magrittr_2.0.3   digest_0.6.31    grid_4.3.0       vroom_1.6.3     
+[33] hms_1.1.3        lifecycle_1.0.3  vctrs_0.6.5      evaluate_0.21   
+[37] glue_1.6.2       fansi_1.0.4      colorspace_2.1-0 rmarkdown_2.21  
+[41] tools_4.3.0      pkgconfig_2.0.3  htmltools_0.5.5 
 ```

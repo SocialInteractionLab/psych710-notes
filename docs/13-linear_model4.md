@@ -9,9 +9,35 @@ library("kableExtra") # for making nice tables
 library("janitor")    # for cleaning column names
 library("broom")      # for tidying up linear models 
 library("afex")       # for running ANOVAs
+```
+
+```
+## Warning: package 'lme4' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'Matrix' was built under R version 4.3.1
+```
+
+```r
 library("emmeans")    # for calculating contrasts
+```
+
+```
+## Warning: package 'emmeans' was built under R version 4.3.1
+```
+
+```r
 library("car")        # for calculating ANOVAs
 library("tidyverse")  # for wrangling, plotting, etc.
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
 ```
 
 
@@ -860,9 +886,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -871,48 +897,48 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3  forcats_1.0.0    stringr_1.5.1    dplyr_1.1.4     
+ [1] lubridate_1.9.2  forcats_1.0.0    stringr_1.5.0    dplyr_1.1.4     
  [5] purrr_1.0.2      readr_2.1.4      tidyr_1.3.0      tibble_3.2.1    
  [9] ggplot2_3.4.4    tidyverse_2.0.0  car_3.1-2        carData_3.0-5   
 [13] emmeans_1.9.0    afex_1.3-0       lme4_1.1-35.1    Matrix_1.6-4    
-[17] broom_1.0.5      janitor_2.2.0    kableExtra_1.3.4 knitr_1.45      
+[17] broom_1.0.5      janitor_2.2.0    kableExtra_1.3.4 knitr_1.42      
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.2.0    viridisLite_0.4.2   farver_2.1.1       
- [4] fastmap_1.1.1       rpart_4.1.23        digest_0.6.33      
- [7] timechange_0.2.0    estimability_1.4.1  lifecycle_1.0.4    
-[10] cluster_2.1.6       magrittr_2.0.3      compiler_4.3.2     
-[13] Hmisc_5.1-1         rlang_1.1.2         sass_0.4.8         
-[16] tools_4.3.2         utf8_1.2.4          yaml_2.3.8         
-[19] data.table_1.14.10  htmlwidgets_1.6.4   labeling_0.4.3     
-[22] bit_4.0.5           plyr_1.8.9          xml2_1.3.6         
-[25] abind_1.4-5         foreign_0.8-86      withr_2.5.2        
-[28] numDeriv_2016.8-1.1 nnet_7.3-19         grid_4.3.2         
-[31] fansi_1.0.6         xtable_1.8-4        colorspace_2.1-0   
-[34] scales_1.3.0        MASS_7.3-60         cli_3.6.2          
-[37] mvtnorm_1.2-4       rmarkdown_2.25      crayon_1.5.2       
-[40] generics_0.1.3      rstudioapi_0.15.0   httr_1.4.7         
-[43] reshape2_1.4.4      tzdb_0.4.0          minqa_1.2.6        
-[46] cachem_1.0.8        splines_4.3.2       rvest_1.0.3        
-[49] parallel_4.3.2      base64enc_0.1-3     vctrs_0.6.5        
-[52] boot_1.3-28.1       webshot_0.5.5       jsonlite_1.8.8     
-[55] bookdown_0.37       hms_1.1.3           bit64_4.0.5        
-[58] htmlTable_2.4.2     Formula_1.2-5       systemfonts_1.0.5  
+ [4] fastmap_1.1.1       rpart_4.1.19        digest_0.6.31      
+ [7] timechange_0.2.0    estimability_1.4.1  lifecycle_1.0.3    
+[10] cluster_2.1.4       magrittr_2.0.3      compiler_4.3.0     
+[13] Hmisc_5.1-1         rlang_1.1.1         sass_0.4.6         
+[16] tools_4.3.0         utf8_1.2.3          yaml_2.3.7         
+[19] data.table_1.14.8   htmlwidgets_1.6.2   labeling_0.4.2     
+[22] bit_4.0.5           plyr_1.8.8          xml2_1.3.4         
+[25] abind_1.4-5         foreign_0.8-84      withr_2.5.0        
+[28] numDeriv_2016.8-1.1 nnet_7.3-18         grid_4.3.0         
+[31] fansi_1.0.4         xtable_1.8-4        colorspace_2.1-0   
+[34] scales_1.3.0        MASS_7.3-58.4       cli_3.6.1          
+[37] mvtnorm_1.2-3       rmarkdown_2.21      crayon_1.5.2       
+[40] generics_0.1.3      rstudioapi_0.14     httr_1.4.6         
+[43] reshape2_1.4.4      tzdb_0.4.0          minqa_1.2.5        
+[46] cachem_1.0.8        splines_4.3.0       rvest_1.0.3        
+[49] parallel_4.3.0      base64enc_0.1-3     vctrs_0.6.5        
+[52] boot_1.3-28.1       webshot_0.5.4       jsonlite_1.8.4     
+[55] bookdown_0.34       hms_1.1.3           bit64_4.0.5        
+[58] htmlTable_2.4.2     Formula_1.2-5       systemfonts_1.0.4  
 [61] jquerylib_0.1.4     glue_1.6.2          nloptr_2.0.3       
-[64] stringi_1.8.3       gtable_0.3.4        lmerTest_3.1-3     
-[67] munsell_0.5.0       pillar_1.9.0        htmltools_0.5.7    
-[70] R6_2.5.1            vroom_1.6.5         evaluate_0.23      
-[73] lattice_0.22-5      highr_0.10          backports_1.4.1    
-[76] snakecase_0.11.1    bslib_0.6.1         Rcpp_1.0.11        
-[79] checkmate_2.3.1     gridExtra_2.3       svglite_2.1.3      
-[82] coda_0.19-4         nlme_3.1-164        xfun_0.41          
+[64] stringi_1.7.12      gtable_0.3.3        lmerTest_3.1-3     
+[67] munsell_0.5.0       pillar_1.9.0        htmltools_0.5.5    
+[70] R6_2.5.1            vroom_1.6.3         evaluate_0.21      
+[73] lattice_0.21-8      highr_0.10          backports_1.4.1    
+[76] snakecase_0.11.0    bslib_0.4.2         Rcpp_1.0.10        
+[79] checkmate_2.2.0     gridExtra_2.3       svglite_2.1.1      
+[82] coda_0.19-4         nlme_3.1-162        xfun_0.39          
 [85] pkgconfig_2.0.3    
 ```
 

@@ -19,22 +19,83 @@ library("tidybayes")   # tidying up results from Bayesian models
 library("brms")        # Bayesian regression models with Stan
 library("patchwork")   # for making figure panels
 library("GGally")      # for pairs plot
+```
+
+```
+## Warning: package 'GGally' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```r
 library("broom.mixed") # for tidy lmer results
 library("bayesplot")   # for visualization of Bayesian model fits 
 library("modelr")      # for modeling functions
 library("lme4")        # for linear mixed effects models 
+```
+
+```
+## Warning: package 'lme4' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'Matrix' was built under R version 4.3.1
+```
+
+```r
 library("afex")        # for ANOVAs
 library("car")         # for ANOVAs
 library("emmeans")     # for linear contrasts
+```
+
+```
+## Warning: package 'emmeans' was built under R version 4.3.1
+```
+
+```r
 library("ggeffects")   # for help with logistic regressions
+```
+
+```
+## Warning: package 'ggeffects' was built under R version 4.3.1
+```
+
+```r
 library("titanic")     # titanic dataset
 library("gganimate")   # for animations
 library("parameters")  # for getting parameters
+```
+
+```
+## Warning: package 'parameters' was built under R version 4.3.1
+```
+
+```r
 library("transformr")  # for gganimate
 library("rstanarm")    # for Bayesian models
 library("ggrepel")     # for labels in ggplots
+```
+
+```
+## Warning: package 'ggrepel' was built under R version 4.3.1
+```
+
+```r
 library("scales")      # for percent y-axis
+```
+
+```
+## Warning: package 'scales' was built under R version 4.3.1
+```
+
+```r
 library("tidyverse")   # for wrangling, plotting, etc. 
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
 ```
 
 
@@ -75,6 +136,14 @@ fit.brm_bayes = brm(s | trials(k) ~ 0 + Intercept,
                file = "cache/brm_bayes")
 ```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
 #### Visualize the results
 
 Visualize the prior and posterior samples: 
@@ -104,16 +173,16 @@ fit.brm_bayes %>%
 ```
 # A draws_df: 1000 iterations, 4 chains, and 2 variables
    b_Intercept prior_b
-1         0.54   0.480
-2         0.49   0.320
-3         0.59   0.123
-4         0.59   0.567
-5         0.66   0.112
-6         0.45   0.113
-7         0.79   0.828
-8         0.63   0.019
-9         0.39   0.014
-10        0.56   0.602
+1         0.46    0.66
+2         0.61    0.53
+3         0.52    0.12
+4         0.52    0.34
+5         0.70    0.23
+6         0.53    0.15
+7         0.70    0.93
+8         0.53    0.02
+9         0.53    0.64
+10        0.62    0.30
 # ... with 3990 more draws
 # ... hidden reserved variables {'.chain', '.iteration', '.draw'}
 ```
@@ -132,7 +201,7 @@ fit.brm_bayes %>%
 ```
 Hypothesis Tests for class b:
              Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-1 (Intercept)-(0.5) = 0     0.07      0.14     -0.2     0.32       2.22
+1 (Intercept)-(0.5) = 0     0.09      0.14    -0.18     0.34       2.19
   Post.Prob Star
 1      0.69     
 ---
@@ -193,12 +262,29 @@ fit.brm_loo1 = brm(formula = y ~ 1,
                    data = df.loo,
                    seed = 1, 
                    file = "cache/brm_loo1")
+```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
+```r
 fit.brm_loo2 = brm(formula = y ~ 1 + x,
                    data = df.loo,
                    seed = 1, 
                    file = "cache/brm_loo2")
+```
 
+```
+Compiling Stan program...
+Start sampling
+```
+
+```r
 fit.brm_loo1 = add_criterion(fit.brm_loo1,
                              criterion = "loo",
                              file = "cache/brm_loo1")
@@ -338,7 +424,17 @@ fit.brm_variance = brm(formula = bf(response ~ group,
                        data = df.variance,
                        file = "cache/brm_variance",
                        seed = 1)
+```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
+```r
 summary(fit.brm_variance)
 ```
 
@@ -477,7 +573,17 @@ fit.brm_ordinal = brm(formula = stars ~ 1 + id,
                       data = df.movies,
                       file = "cache/brm_ordinal",
                       seed = 1)
+```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
+```r
 summary(fit.brm_ordinal)
 ```
 
@@ -624,7 +730,17 @@ fit.brm_metric = brm(formula = stars ~ 1 + id,
                      data = df.movies,
                      file = "cache/brm_metric",
                      seed = 1)
+```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
+```r
 summary(fit.brm_metric)
 ```
 
@@ -723,7 +839,17 @@ fit.brm_ordinal_variance = brm(formula = bf(stars ~ 1 + id) +
                                data = df.movies,
                                file = "cache/brm_ordinal_variance",
                                seed = 1)
+```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
+```r
 summary(fit.brm_ordinal_variance)
 ```
 
@@ -833,7 +959,17 @@ fit.brm_metric_variance = brm(formula = bf(stars ~ 1 + id,
                data = df.movies,
                file = "cache/brm_metric_variance",
                seed = 1)
+```
 
+```
+Compiling Stan program...
+```
+
+```
+Start sampling
+```
+
+```r
 summary(fit.brm_metric_variance)
 ```
 
@@ -956,6 +1092,7 @@ loo_compare(fit.brm_ordinal, fit.brm_ordinal_variance)
 - [Hypothetical outcome plots](https://mucollective.northwestern.edu/files/2018-HOPsTrends-InfoVis.pdf)
 - [Visual MCMC diagnostics](https://cran.r-project.org/web/packages/bayesplot/vignettes/visual-mcmc-diagnostics.html#general-mcmc-diagnostics)
 - [Visualiztion of different MCMC algorithms](https://chi-feng.github.io/mcmc-demo/)
+- [Frequentist equivalence test](https://www.carlislerainey.com/blog/2023-08-18-equivalence-tests/?s=09)
 
 
 For additional resources, I highly recommend the brms and tidyverse implementations of the Statistical rethinking book [@mcelreath2020statistical], as well as of the Doing Bayesian Data analysis book [@kruschke2014doing], by Solomon Kurz [@kurz2020statistical; @kurz2022doingbayesian]. 
@@ -971,9 +1108,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -982,72 +1119,73 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3       forcats_1.0.0         stringr_1.5.1        
- [4] dplyr_1.1.4           purrr_1.0.2           readr_2.1.4          
- [7] tidyr_1.3.0           tibble_3.2.1          tidyverse_2.0.0      
-[10] scales_1.3.0          ggrepel_0.9.4         rstanarm_2.26.1      
-[13] transformr_0.1.4.9000 parameters_0.21.3     gganimate_1.0.8      
-[16] titanic_0.1.0         ggeffects_1.3.4       emmeans_1.9.0        
-[19] car_3.1-2             carData_3.0-5         afex_1.3-0           
-[22] lme4_1.1-35.1         Matrix_1.6-4          modelr_0.1.11        
-[25] bayesplot_1.10.0      broom.mixed_0.2.9.4   GGally_2.2.0         
-[28] ggplot2_3.4.4         patchwork_1.1.3       brms_2.20.4          
-[31] Rcpp_1.0.11           tidybayes_3.0.6       janitor_2.2.0        
-[34] kableExtra_1.3.4      knitr_1.45           
+ [1] lubridate_1.9.2     forcats_1.0.0       stringr_1.5.0      
+ [4] dplyr_1.1.4         purrr_1.0.2         readr_2.1.4        
+ [7] tidyr_1.3.0         tibble_3.2.1        tidyverse_2.0.0    
+[10] scales_1.3.0        ggrepel_0.9.4       rstanarm_2.26.1    
+[13] transformr_0.1.4    parameters_0.21.3   gganimate_1.0.8    
+[16] titanic_0.1.0       ggeffects_1.3.4     emmeans_1.9.0      
+[19] car_3.1-2           carData_3.0-5       afex_1.3-0         
+[22] lme4_1.1-35.1       Matrix_1.6-4        modelr_0.1.11      
+[25] bayesplot_1.10.0    broom.mixed_0.2.9.4 GGally_2.2.0       
+[28] ggplot2_3.4.4       patchwork_1.1.3     brms_2.20.1        
+[31] Rcpp_1.0.10         tidybayes_3.0.6     janitor_2.2.0      
+[34] kableExtra_1.3.4    knitr_1.42         
 
 loaded via a namespace (and not attached):
-  [1] svUnit_1.0.6         shinythemes_1.2.0    splines_4.3.2       
-  [4] later_1.3.2          datawizard_0.9.1     xts_0.13.1          
-  [7] lifecycle_1.0.4      sf_1.0-15            StanHeaders_2.26.28 
- [10] vroom_1.6.5          globals_0.16.2       lattice_0.22-5      
- [13] MASS_7.3-60          insight_0.19.7       crosstalk_1.2.1     
- [16] ggdist_3.3.1         backports_1.4.1      magrittr_2.0.3      
- [19] sass_0.4.8           rmarkdown_2.25       jquerylib_0.1.4     
- [22] yaml_2.3.8           httpuv_1.6.13        pkgbuild_1.4.3      
- [25] DBI_1.2.0            minqa_1.2.6          RColorBrewer_1.1-3  
- [28] abind_1.4-5          rvest_1.0.3          tensorA_0.36.2.1    
- [31] tweenr_2.0.2         inline_0.3.19        listenv_0.9.0       
- [34] units_0.8-5          bridgesampling_1.1-2 parallelly_1.36.0   
- [37] svglite_2.1.3        codetools_0.2-19     DT_0.31             
- [40] xml2_1.3.6           tidyselect_1.2.0     farver_2.1.1        
- [43] matrixStats_1.2.0    stats4_4.3.2         base64enc_0.1-3     
- [46] webshot_0.5.5        jsonlite_1.8.8       e1071_1.7-14        
- [49] ellipsis_0.3.2       survival_3.5-7       systemfonts_1.0.5   
- [52] tools_4.3.2          progress_1.2.3       glue_1.6.2          
- [55] gridExtra_2.3        xfun_0.41            distributional_0.3.2
- [58] loo_2.6.0            withr_2.5.2          numDeriv_2016.8-1.1 
- [61] fastmap_1.1.1        boot_1.3-28.1        fansi_1.0.6         
- [64] shinyjs_2.1.0        digest_0.6.33        timechange_0.2.0    
- [67] R6_2.5.1             mime_0.12            estimability_1.4.1  
- [70] colorspace_2.1-0     lpSolve_5.6.20       gtools_3.9.5        
- [73] markdown_1.12        threejs_0.3.3        utf8_1.2.4          
- [76] generics_0.1.3       class_7.3-22         prettyunits_1.2.0   
- [79] httr_1.4.7           htmlwidgets_1.6.4    ggstats_0.5.1       
- [82] pkgconfig_2.0.3      dygraphs_1.1.1.6     gtable_0.3.4        
- [85] furrr_0.3.1          htmltools_0.5.7      bookdown_0.37       
- [88] posterior_1.5.0      snakecase_0.11.1     rstudioapi_0.15.0   
- [91] tzdb_0.4.0           reshape2_1.4.4       coda_0.19-4         
- [94] checkmate_2.3.1      nlme_3.1-164         curl_5.2.0          
- [97] nloptr_2.0.3         proxy_0.4-27         cachem_1.0.8        
-[100] zoo_1.8-12           KernSmooth_2.23-22   parallel_4.3.2      
-[103] miniUI_0.1.1.1       pillar_1.9.0         grid_4.3.2          
-[106] vctrs_0.6.5          shinystan_2.6.0      promises_1.2.1      
-[109] arrayhelpers_1.1-0   xtable_1.8-4         evaluate_0.23       
-[112] mvtnorm_1.2-4        cli_3.6.2            compiler_4.3.2      
-[115] rlang_1.1.2          crayon_1.5.2         rstantools_2.3.1.1  
-[118] labeling_0.4.3       classInt_0.4-10      plyr_1.8.9          
-[121] stringi_1.8.3        rstan_2.32.3         viridisLite_0.4.2   
-[124] QuickJSR_1.0.9       lmerTest_3.1-3       munsell_0.5.0       
-[127] colourpicker_1.3.0   Brobdingnag_1.2-9    bayestestR_0.13.1   
-[130] V8_4.4.1             hms_1.1.3            bit64_4.0.5         
-[133] future_1.33.1        shiny_1.8.0          highr_0.10          
-[136] igraph_1.6.0         broom_1.0.5          RcppParallel_5.1.7  
-[139] bslib_0.6.1          bit_4.0.5           
+  [1] svUnit_1.0.6         shinythemes_1.2.0    splines_4.3.0       
+  [4] later_1.3.1          datawizard_0.9.1     xts_0.13.1          
+  [7] lifecycle_1.0.3      sf_1.0-15            StanHeaders_2.26.28 
+ [10] vroom_1.6.3          globals_0.16.2       processx_3.8.1      
+ [13] lattice_0.21-8       MASS_7.3-58.4        insight_0.19.7      
+ [16] crosstalk_1.2.0      ggdist_3.3.0         backports_1.4.1     
+ [19] magrittr_2.0.3       sass_0.4.6           rmarkdown_2.21      
+ [22] jquerylib_0.1.4      yaml_2.3.7           httpuv_1.6.11       
+ [25] pkgbuild_1.4.2       DBI_1.1.3            minqa_1.2.5         
+ [28] RColorBrewer_1.1-3   abind_1.4-5          rvest_1.0.3         
+ [31] tensorA_0.36.2       tweenr_2.0.2         inline_0.3.19       
+ [34] listenv_0.9.0        units_0.8-5          bridgesampling_1.1-2
+ [37] parallelly_1.36.0    svglite_2.1.1        codetools_0.2-19    
+ [40] DT_0.31              xml2_1.3.4           tidyselect_1.2.0    
+ [43] farver_2.1.1         matrixStats_1.0.0    stats4_4.3.0        
+ [46] base64enc_0.1-3      webshot_0.5.4        jsonlite_1.8.4      
+ [49] e1071_1.7-14         ellipsis_0.3.2       survival_3.5-5      
+ [52] systemfonts_1.0.4    tools_4.3.0          progress_1.2.2      
+ [55] glue_1.6.2           gridExtra_2.3        xfun_0.39           
+ [58] distributional_0.3.2 loo_2.6.0            withr_2.5.0         
+ [61] numDeriv_2016.8-1.1  fastmap_1.1.1        boot_1.3-28.1       
+ [64] fansi_1.0.4          shinyjs_2.1.0        callr_3.7.3         
+ [67] digest_0.6.31        timechange_0.2.0     R6_2.5.1            
+ [70] mime_0.12            estimability_1.4.1   colorspace_2.1-0    
+ [73] lpSolve_5.6.20       gtools_3.9.4         markdown_1.7        
+ [76] threejs_0.3.3        utf8_1.2.3           generics_0.1.3      
+ [79] class_7.3-21         prettyunits_1.1.1    httr_1.4.6          
+ [82] htmlwidgets_1.6.2    ggstats_0.5.1        pkgconfig_2.0.3     
+ [85] dygraphs_1.1.1.6     gtable_0.3.3         furrr_0.3.1         
+ [88] htmltools_0.5.5      bookdown_0.34        posterior_1.4.1     
+ [91] snakecase_0.11.0     rstudioapi_0.14      tzdb_0.4.0          
+ [94] reshape2_1.4.4       coda_0.19-4          checkmate_2.2.0     
+ [97] nlme_3.1-162         curl_5.0.1           nloptr_2.0.3        
+[100] proxy_0.4-27         cachem_1.0.8         zoo_1.8-12          
+[103] KernSmooth_2.23-20   parallel_4.3.0       miniUI_0.1.1.1      
+[106] pillar_1.9.0         grid_4.3.0           vctrs_0.6.5         
+[109] shinystan_2.6.0      promises_1.2.1       arrayhelpers_1.1-0  
+[112] xtable_1.8-4         evaluate_0.21        mvtnorm_1.2-3       
+[115] cli_3.6.1            compiler_4.3.0       rlang_1.1.1         
+[118] crayon_1.5.2         rstantools_2.3.1.1   labeling_0.4.2      
+[121] classInt_0.4-10      ps_1.7.5             plyr_1.8.8          
+[124] stringi_1.7.12       rstan_2.32.3         viridisLite_0.4.2   
+[127] QuickJSR_1.0.9       lmerTest_3.1-3       munsell_0.5.0       
+[130] colourpicker_1.3.0   Brobdingnag_1.2-9    bayestestR_0.13.1   
+[133] V8_4.4.1             hms_1.1.3            bit64_4.0.5         
+[136] future_1.32.0        shiny_1.7.5          highr_0.10          
+[139] igraph_1.5.1         broom_1.0.5          RcppParallel_5.1.7  
+[142] bslib_0.4.2          bit_4.0.5           
 ```

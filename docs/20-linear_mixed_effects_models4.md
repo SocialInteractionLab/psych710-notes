@@ -14,14 +14,47 @@ library("kableExtra")  # for making nice tables
 library("janitor")     # for cleaning column names
 library("broom.mixed") # for tidying up linear mixed effects models 
 library("lme4")        # for linear mixed effects models
+```
+
+```
+## Warning: package 'lme4' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'Matrix' was built under R version 4.3.1
+```
+
+```r
 library("afex")        # for ANOVAs
 library("car")         # for ANOVAs
 library("datarium")    # for ANOVA dataset
 library("modelr")      # for bootstrapping
 library("boot")        # also for bootstrapping
 library("ggeffects")   # for plotting marginal effects
+```
+
+```
+## Warning: package 'ggeffects' was built under R version 4.3.1
+```
+
+```r
 library("emmeans")     # for marginal effects
+```
+
+```
+## Warning: package 'emmeans' was built under R version 4.3.1
+```
+
+```r
 library("tidyverse")   # for wrangling, plotting, etc. 
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
 ```
 
 
@@ -92,7 +125,7 @@ df.politeness = read_csv("data/politeness_data.csv") %>%
 
 ```
 Rows: 84 Columns: 5
-── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Delimiter: ","
 chr (3): subject, gender, attitude
 dbl (2): scenario, frequency
@@ -891,9 +924,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -902,54 +935,54 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3     forcats_1.0.0       stringr_1.5.1      
+ [1] lubridate_1.9.2     forcats_1.0.0       stringr_1.5.0      
  [4] dplyr_1.1.4         purrr_1.0.2         readr_2.1.4        
  [7] tidyr_1.3.0         tibble_3.2.1        ggplot2_3.4.4      
 [10] tidyverse_2.0.0     emmeans_1.9.0       ggeffects_1.3.4    
 [13] boot_1.3-28.1       modelr_0.1.11       datarium_0.1.0     
 [16] car_3.1-2           carData_3.0-5       afex_1.3-0         
 [19] lme4_1.1-35.1       Matrix_1.6-4        broom.mixed_0.2.9.4
-[22] janitor_2.2.0       kableExtra_1.3.4    knitr_1.45         
+[22] janitor_2.2.0       kableExtra_1.3.4    knitr_1.42         
 
 loaded via a namespace (and not attached):
- [1] gridExtra_2.3       rlang_1.1.2         magrittr_2.0.3     
- [4] snakecase_0.11.1    furrr_0.3.1         compiler_4.3.2     
- [7] mgcv_1.9-1          systemfonts_1.0.5   vctrs_0.6.5        
+ [1] gridExtra_2.3       rlang_1.1.1         magrittr_2.0.3     
+ [4] snakecase_0.11.0    furrr_0.3.1         compiler_4.3.0     
+ [7] mgcv_1.8-42         systemfonts_1.0.4   vctrs_0.6.5        
 [10] reshape2_1.4.4      rvest_1.0.3         pkgconfig_2.0.3    
 [13] crayon_1.5.2        fastmap_1.1.1       backports_1.4.1    
-[16] labeling_0.4.3      utf8_1.2.4          rmarkdown_2.25     
-[19] tzdb_0.4.0          haven_2.5.4         nloptr_2.0.3       
-[22] bit_4.0.5           xfun_0.41           cachem_1.0.8       
-[25] jsonlite_1.8.8      highr_0.10          broom_1.0.5        
-[28] parallel_4.3.2      cluster_2.1.6       R6_2.5.1           
-[31] RColorBrewer_1.1-3  bslib_0.6.1         stringi_1.8.3      
-[34] parallelly_1.36.0   rpart_4.1.23        jquerylib_0.1.4    
-[37] numDeriv_2016.8-1.1 estimability_1.4.1  Rcpp_1.0.11        
-[40] bookdown_0.37       base64enc_0.1-3     splines_4.3.2      
-[43] nnet_7.3-19         timechange_0.2.0    tidyselect_1.2.0   
-[46] rstudioapi_0.15.0   abind_1.4-5         yaml_2.3.8         
+[16] labeling_0.4.2      utf8_1.2.3          rmarkdown_2.21     
+[19] tzdb_0.4.0          haven_2.5.2         nloptr_2.0.3       
+[22] bit_4.0.5           xfun_0.39           cachem_1.0.8       
+[25] jsonlite_1.8.4      highr_0.10          broom_1.0.5        
+[28] parallel_4.3.0      cluster_2.1.4       R6_2.5.1           
+[31] RColorBrewer_1.1-3  bslib_0.4.2         stringi_1.7.12     
+[34] parallelly_1.36.0   rpart_4.1.19        jquerylib_0.1.4    
+[37] numDeriv_2016.8-1.1 estimability_1.4.1  Rcpp_1.0.10        
+[40] bookdown_0.34       base64enc_0.1-3     splines_4.3.0      
+[43] nnet_7.3-18         timechange_0.2.0    tidyselect_1.2.0   
+[46] rstudioapi_0.14     abind_1.4-5         yaml_2.3.7         
 [49] sjlabelled_1.2.0    codetools_0.2-19    listenv_0.9.0      
-[52] lattice_0.22-5      lmerTest_3.1-3      plyr_1.8.9         
-[55] withr_2.5.2         coda_0.19-4         evaluate_0.23      
-[58] foreign_0.8-86      future_1.33.1       xml2_1.3.6         
-[61] pillar_1.9.0        checkmate_2.3.1     insight_0.19.7     
-[64] generics_0.1.3      vroom_1.6.5         hms_1.1.3          
-[67] munsell_0.5.0       scales_1.3.0        minqa_1.2.6        
+[52] lattice_0.21-8      lmerTest_3.1-3      plyr_1.8.8         
+[55] withr_2.5.0         coda_0.19-4         evaluate_0.21      
+[58] foreign_0.8-84      future_1.32.0       xml2_1.3.4         
+[61] pillar_1.9.0        checkmate_2.2.0     insight_0.19.7     
+[64] generics_0.1.3      vroom_1.6.3         hms_1.1.3          
+[67] munsell_0.5.0       scales_1.3.0        minqa_1.2.5        
 [70] globals_0.16.2      xtable_1.8-4        glue_1.6.2         
-[73] Hmisc_5.1-1         tools_4.3.2         data.table_1.14.10 
-[76] webshot_0.5.5       mvtnorm_1.2-4       grid_4.3.2         
-[79] datawizard_0.9.1    colorspace_2.1-0    nlme_3.1-164       
-[82] htmlTable_2.4.2     Formula_1.2-5       cli_3.6.2          
-[85] fansi_1.0.6         viridisLite_0.4.2   svglite_2.1.3      
-[88] gtable_0.3.4        sass_0.4.8          digest_0.6.33      
-[91] pbkrtest_0.5.2      farver_2.1.1        htmlwidgets_1.6.4  
-[94] htmltools_0.5.7     lifecycle_1.0.4     httr_1.4.7         
-[97] bit64_4.0.5         MASS_7.3-60        
+[73] Hmisc_5.1-1         tools_4.3.0         data.table_1.14.8  
+[76] webshot_0.5.4       mvtnorm_1.2-3       grid_4.3.0         
+[79] datawizard_0.9.1    colorspace_2.1-0    nlme_3.1-162       
+[82] htmlTable_2.4.2     Formula_1.2-5       cli_3.6.1          
+[85] fansi_1.0.4         viridisLite_0.4.2   svglite_2.1.1      
+[88] gtable_0.3.3        sass_0.4.6          digest_0.6.31      
+[91] pbkrtest_0.5.2      farver_2.1.1        htmlwidgets_1.6.2  
+[94] htmltools_0.5.5     lifecycle_1.0.3     httr_1.4.6         
+[97] bit64_4.0.5         MASS_7.3-58.4      
 ```

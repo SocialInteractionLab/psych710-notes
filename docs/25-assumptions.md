@@ -14,17 +14,50 @@ library("knitr")      # for knitting RMarkdown
 library("kableExtra") # for nice RMarkdown tables
 library("tidybayes")  # tidying up results from Bayesian models
 library("lme4")       # for linear mixed effects models 
+```
+
+```
+## Warning: package 'lme4' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'Matrix' was built under R version 4.3.1
+```
+
+```r
 library("brms")       # Bayesian regression models with Stan
 library("car")        # for bootstrapping regression models 
 library("broom")      # for tidy regression results
 library("janitor")    # for cleaning up variable names 
 library("patchwork")  # for figure panels
 library("ggeffects")  # for visualizing estimated marginal means
+```
+
+```
+## Warning: package 'ggeffects' was built under R version 4.3.1
+```
+
+```r
 library("stargazer")  # for latex regression tables 
 library("sjPlot")     # for nice RMarkdown regression tables
 library("xtable")     # for latex tables
 library("ggrepel")    # for smart text annotation in ggplot
+```
+
+```
+## Warning: package 'ggrepel' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```r
 library("tidyverse")  # for wrangling, plotting, etc. 
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
 ```
 
 
@@ -1239,9 +1272,9 @@ sessionInfo()
 ```
 
 ```
-## R version 4.3.2 (2023-10-31)
+## R version 4.3.0 (2023-04-21)
 ## Platform: aarch64-apple-darwin20 (64-bit)
-## Running under: macOS Sonoma 14.1.2
+## Running under: macOS 14.1.1
 ## 
 ## Matrix products: default
 ## BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -1250,65 +1283,66 @@ sessionInfo()
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
-## time zone: America/Los_Angeles
+## time zone: America/Chicago
 ## tzcode source: internal
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] lubridate_1.9.3  forcats_1.0.0    stringr_1.5.1    dplyr_1.1.4     
+##  [1] lubridate_1.9.2  forcats_1.0.0    stringr_1.5.0    dplyr_1.1.4     
 ##  [5] purrr_1.0.2      readr_2.1.4      tidyr_1.3.0      tibble_3.2.1    
 ##  [9] tidyverse_2.0.0  ggrepel_0.9.4    ggplot2_3.4.4    xtable_1.8-4    
 ## [13] sjPlot_2.8.15    stargazer_5.2.3  ggeffects_1.3.4  patchwork_1.1.3 
 ## [17] janitor_2.2.0    broom_1.0.5      car_3.1-2        carData_3.0-5   
-## [21] brms_2.20.4      Rcpp_1.0.11      lme4_1.1-35.1    Matrix_1.6-4    
-## [25] tidybayes_3.0.6  kableExtra_1.3.4 knitr_1.45      
+## [21] brms_2.20.1      Rcpp_1.0.10      lme4_1.1-35.1    Matrix_1.6-4    
+## [25] tidybayes_3.0.6  kableExtra_1.3.4 knitr_1.42      
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] svUnit_1.0.6         shinythemes_1.2.0    splines_4.3.2       
-##   [4] later_1.3.2          datawizard_0.9.1     rpart_4.1.23        
-##   [7] xts_0.13.1           lifecycle_1.0.4      StanHeaders_2.26.28 
-##  [10] lattice_0.22-5       vroom_1.6.5          MASS_7.3-60         
-##  [13] insight_0.19.7       crosstalk_1.2.1      ggdist_3.3.1        
-##  [16] backports_1.4.1      magrittr_2.0.3       Hmisc_5.1-1         
-##  [19] sass_0.4.8           rmarkdown_2.25       jquerylib_0.1.4     
-##  [22] yaml_2.3.8           httpuv_1.6.13        pkgbuild_1.4.3      
-##  [25] minqa_1.2.6          abind_1.4-5          rvest_1.0.3         
-##  [28] nnet_7.3-19          tensorA_0.36.2.1     inline_0.3.19       
-##  [31] performance_0.10.8   bridgesampling_1.1-2 svglite_2.1.3       
-##  [34] codetools_0.2-19     DT_0.31              xml2_1.3.6          
-##  [37] tidyselect_1.2.0     bayesplot_1.10.0     farver_2.1.1        
-##  [40] matrixStats_1.2.0    stats4_4.3.2         base64enc_0.1-3     
-##  [43] webshot_0.5.5        jsonlite_1.8.8       ellipsis_0.3.2      
-##  [46] Formula_1.2-5        emmeans_1.9.0        systemfonts_1.0.5   
-##  [49] tools_4.3.2          glue_1.6.2           gridExtra_2.3       
-##  [52] xfun_0.41            mgcv_1.9-1           distributional_0.3.2
-##  [55] loo_2.6.0            withr_2.5.2          fastmap_1.1.1       
-##  [58] boot_1.3-28.1        fansi_1.0.6          shinyjs_2.1.0       
-##  [61] digest_0.6.33        timechange_0.2.0     R6_2.5.1            
-##  [64] mime_0.12            estimability_1.4.1   colorspace_2.1-0    
-##  [67] gtools_3.9.5         markdown_1.12        threejs_0.3.3       
-##  [70] utf8_1.2.4           generics_0.1.3       data.table_1.14.10  
-##  [73] httr_1.4.7           htmlwidgets_1.6.4    pkgconfig_2.0.3     
-##  [76] dygraphs_1.1.1.6     gtable_0.3.4         htmltools_0.5.7     
-##  [79] bookdown_0.37        scales_1.3.0         posterior_1.5.0     
-##  [82] snakecase_0.11.1     rstudioapi_0.15.0    tzdb_0.4.0          
-##  [85] reshape2_1.4.4       coda_0.19-4          checkmate_2.3.1     
-##  [88] nlme_3.1-164         curl_5.2.0           nloptr_2.0.3        
-##  [91] cachem_1.0.8         zoo_1.8-12           sjlabelled_1.2.0    
-##  [94] parallel_4.3.2       miniUI_0.1.1.1       foreign_0.8-86      
-##  [97] pillar_1.9.0         grid_4.3.2           vctrs_0.6.5         
-## [100] shinystan_2.6.0      promises_1.2.1       arrayhelpers_1.1-0  
-## [103] cluster_2.1.6        htmlTable_2.4.2      evaluate_0.23       
-## [106] mvtnorm_1.2-4        cli_3.6.2            compiler_4.3.2      
-## [109] rlang_1.1.2          crayon_1.5.2         rstantools_2.3.1.1  
-## [112] modelr_0.1.11        labeling_0.4.3       plyr_1.8.9          
-## [115] sjmisc_2.8.9         stringi_1.8.3        rstan_2.32.3        
-## [118] viridisLite_0.4.2    QuickJSR_1.0.9       munsell_0.5.0       
-## [121] colourpicker_1.3.0   Brobdingnag_1.2-9    bayestestR_0.13.1   
-## [124] V8_4.4.1             sjstats_0.18.2       hms_1.1.3           
-## [127] bit64_4.0.5          shiny_1.8.0          highr_0.10          
-## [130] haven_2.5.4          igraph_1.6.0         RcppParallel_5.1.7  
-## [133] bslib_0.6.1          bit_4.0.5
+##   [1] svUnit_1.0.6         shinythemes_1.2.0    splines_4.3.0       
+##   [4] later_1.3.1          datawizard_0.9.1     rpart_4.1.19        
+##   [7] xts_0.13.1           lifecycle_1.0.3      StanHeaders_2.26.28 
+##  [10] processx_3.8.1       lattice_0.21-8       vroom_1.6.3         
+##  [13] MASS_7.3-58.4        insight_0.19.7       crosstalk_1.2.0     
+##  [16] ggdist_3.3.0         backports_1.4.1      magrittr_2.0.3      
+##  [19] Hmisc_5.1-1          sass_0.4.6           rmarkdown_2.21      
+##  [22] jquerylib_0.1.4      yaml_2.3.7           httpuv_1.6.11       
+##  [25] pkgbuild_1.4.2       minqa_1.2.5          abind_1.4-5         
+##  [28] rvest_1.0.3          nnet_7.3-18          tensorA_0.36.2      
+##  [31] inline_0.3.19        performance_0.10.8   bridgesampling_1.1-2
+##  [34] svglite_2.1.1        codetools_0.2-19     DT_0.31             
+##  [37] xml2_1.3.4           tidyselect_1.2.0     bayesplot_1.10.0    
+##  [40] farver_2.1.1         matrixStats_1.0.0    stats4_4.3.0        
+##  [43] base64enc_0.1-3      webshot_0.5.4        jsonlite_1.8.4      
+##  [46] Formula_1.2-5        ellipsis_0.3.2       emmeans_1.9.0       
+##  [49] systemfonts_1.0.4    tools_4.3.0          glue_1.6.2          
+##  [52] gridExtra_2.3        xfun_0.39            mgcv_1.8-42         
+##  [55] distributional_0.3.2 loo_2.6.0            withr_2.5.0         
+##  [58] fastmap_1.1.1        boot_1.3-28.1        fansi_1.0.4         
+##  [61] shinyjs_2.1.0        callr_3.7.3          digest_0.6.31       
+##  [64] timechange_0.2.0     R6_2.5.1             mime_0.12           
+##  [67] estimability_1.4.1   colorspace_2.1-0     gtools_3.9.4        
+##  [70] markdown_1.7         threejs_0.3.3        utf8_1.2.3          
+##  [73] generics_0.1.3       data.table_1.14.8    prettyunits_1.1.1   
+##  [76] httr_1.4.6           htmlwidgets_1.6.2    pkgconfig_2.0.3     
+##  [79] dygraphs_1.1.1.6     gtable_0.3.3         htmltools_0.5.5     
+##  [82] bookdown_0.34        scales_1.3.0         posterior_1.4.1     
+##  [85] snakecase_0.11.0     rstudioapi_0.14      tzdb_0.4.0          
+##  [88] reshape2_1.4.4       coda_0.19-4          checkmate_2.2.0     
+##  [91] nlme_3.1-162         curl_5.0.1           nloptr_2.0.3        
+##  [94] cachem_1.0.8         zoo_1.8-12           sjlabelled_1.2.0    
+##  [97] parallel_4.3.0       miniUI_0.1.1.1       foreign_0.8-84      
+## [100] pillar_1.9.0         grid_4.3.0           vctrs_0.6.5         
+## [103] shinystan_2.6.0      promises_1.2.1       arrayhelpers_1.1-0  
+## [106] cluster_2.1.4        htmlTable_2.4.2      evaluate_0.21       
+## [109] mvtnorm_1.2-3        cli_3.6.1            compiler_4.3.0      
+## [112] rlang_1.1.1          crayon_1.5.2         rstantools_2.3.1.1  
+## [115] modelr_0.1.11        labeling_0.4.2       ps_1.7.5            
+## [118] plyr_1.8.8           sjmisc_2.8.9         stringi_1.7.12      
+## [121] rstan_2.32.3         viridisLite_0.4.2    QuickJSR_1.0.9      
+## [124] munsell_0.5.0        colourpicker_1.3.0   Brobdingnag_1.2-9   
+## [127] bayestestR_0.13.1    V8_4.4.1             sjstats_0.18.2      
+## [130] hms_1.1.3            bit64_4.0.5          shiny_1.7.5         
+## [133] highr_0.10           haven_2.5.2          igraph_1.5.1        
+## [136] RcppParallel_5.1.7   bslib_0.4.2          bit_4.0.5
 ```

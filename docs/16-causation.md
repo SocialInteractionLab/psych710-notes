@@ -28,12 +28,38 @@ library("knitr")         # for knitting RMarkdown
 library("kableExtra")    # for making nice tables
 library("janitor")       # for cleaning column names
 library("mediation")     # for mediation and moderation analysis 
+```
+
+```
+## Warning: package 'Matrix' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'sandwich' was built under R version 4.3.1
+```
+
+```r
 library("multilevel")    # Sobel test
 library("broom")         # tidying up regression results
 library("DiagrammeR")    # for drawing diagrams
 library("DiagrammeRsvg") # for exporting pdfs of graphs 
 library("rsvg")          # for exporting pdfs of graphs 
+```
+
+```
+## Warning: package 'rsvg' was built under R version 4.3.1
+```
+
+```r
 library("tidyverse")     # for wrangling, plotting, etc. 
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
 ```
 
 
@@ -53,8 +79,8 @@ options(dplyr.summarise.inform = FALSE) # Disable summarize ungroup messages
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-745c879d9f3cfe2f99bb" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-745c879d9f3cfe2f99bb">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 10,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"\"]\n  1 -> 3 [label = \"\"]\n  2 -> 4 [label = \"\"] \n  3 -> 4 [label = \"\"]\n  \n  # labels for each node\n  1 [label = \"Cloudy\"]\n  2 [label = \"Sprinkler\"]\n  3 [label = \"Rain\"]\n  4 [label = \"Wet grass\"]\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d11755ec4adbfb862c36" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-d11755ec4adbfb862c36">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 10,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"\"]\n  1 -> 3 [label = \"\"]\n  2 -> 4 [label = \"\"] \n  3 -> 4 [label = \"\"]\n  \n  # labels for each node\n  1 [label = \"Cloudy\"]\n  2 [label = \"Sprinkler\"]\n  3 [label = \"Rain\"]\n  4 [label = \"Wet grass\"]\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 
@@ -250,8 +276,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-4e23cac6e9ad01d77f99" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4e23cac6e9ad01d77f99">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  c [label = \"C\" pos = \"1,-1!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  f [label = \"F\" pos = \"1,-3!\"]\n  g [label = \"G\" pos = \"0,-4!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  a -> c\n  b -> c\n  c -> {d e}\n  d -> f\n  f -> g\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cc4cb0652313ad87ab9f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-cc4cb0652313ad87ab9f">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  c [label = \"C\" pos = \"1,-1!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  f [label = \"F\" pos = \"1,-3!\"]\n  g [label = \"G\" pos = \"0,-4!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  a -> c\n  b -> c\n  c -> {d e}\n  d -> f\n  f -> g\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### Draw the ancestral graph
@@ -303,8 +329,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-9dfbe09ac3771165ed59" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-9dfbe09ac3771165ed59">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  c [label = \"C\" pos = \"1,-1!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  a -> c\n  b -> c\n  c -> {d e}\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-513b70e981d98e2a767c" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-513b70e981d98e2a767c">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  c [label = \"C\" pos = \"1,-1!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  a -> c\n  b -> c\n  c -> {d e}\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### "Moralize" the ancestral graph by "marrying" any parents, and disorient by replacing arrows with edges
@@ -359,8 +385,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-239cdaf96c9fef50b6a4" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-239cdaf96c9fef50b6a4">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  c [label = \"C\" pos = \"1,-1!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  a -- c\n  b -- c\n  c -- {d e}\n  \n  edge [color = black]\n  a -- b\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-85a31a162f7c84d994b9" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-85a31a162f7c84d994b9">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  c [label = \"C\" pos = \"1,-1!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  a -- c\n  b -- c\n  c -- {d e}\n  \n  edge [color = black]\n  a -- b\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 - For the case in which we check whether D and E are independent conditioned on C
@@ -411,8 +437,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d365076f14fe93958afc" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d365076f14fe93958afc">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  \n  # edges between nodes\n  edge [color = black]\n\n  edge [color = black]\n  a -- b\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-29b7e74a8b4d75b982e8" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-29b7e74a8b4d75b982e8">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  a [label = \"A\" pos = \"0,0!\"]\n  b [label = \"B\"  pos = \"2,0!\"]\n  d [label = \"D\" pos = \"0,-2!\"]\n  e [label = \"E\" pos = \"2,-2!\"]\n  \n  # edges between nodes\n  edge [color = black]\n\n  edge [color = black]\n  a -- b\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 
@@ -466,8 +492,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-e8a6d2c97f867f63aa42" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-e8a6d2c97f867f63aa42">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> y\n  z -> {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1d7ca526627011fafa62" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1d7ca526627011fafa62">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> y\n  z -> {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ##### Regression
@@ -589,8 +615,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-81165e4670ab4fe62b00" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-81165e4670ab4fe62b00">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -- y\n  z -- {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9bb029532ce5c1cbe259" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-9bb029532ce5c1cbe259">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -- y\n  z -- {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 
@@ -644,8 +670,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a830244451ecbcba88c4" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a830244451ecbcba88c4">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  z -> {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f015c11c27a5ff607aaf" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f015c11c27a5ff607aaf">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  z -> {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ##### Regression
@@ -768,8 +794,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-178eeec0db531f857eab" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-178eeec0db531f857eab">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,-1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> z\n  y -> z\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a7637869bf08783b83e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5a7637869bf08783b83e">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,-1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> z\n  y -> z\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ##### Regression
@@ -889,8 +915,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-1e264e579ad7c9d408c6" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-1e264e579ad7c9d408c6">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,-1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -- y\n  x -- z\n  y -- z\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-518b0dc7d9fd68e794c2" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-518b0dc7d9fd68e794c2">{"x":{"diagram":"\ngraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1,-1!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -- y\n  x -- z\n  y -- z\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### Causal chain 1
@@ -941,8 +967,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-23be689d1e53102ba2b3" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-23be689d1e53102ba2b3">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1, 0!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> z\n  z -> y\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ba76f399fa5c93edf1f9" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ba76f399fa5c93edf1f9">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"1, 0!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> z\n  z -> y\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ##### Regression
@@ -1063,8 +1089,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d7d8fff68578584a6377" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d7d8fff68578584a6377">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"1,0!\"]\n  z [label = \"Z\" pos = \"2, 0!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> y\n  y -> z\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-66fd5a4fc0efc61d149f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-66fd5a4fc0efc61d149f">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"1,0!\"]\n  z [label = \"Z\" pos = \"2, 0!\", fontcolor = \"red\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> y\n  y -> z\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ##### Regression
@@ -1187,8 +1213,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-e769bb6d04f924296368" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-e769bb6d04f924296368">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"-1, 1!\", fontcolor = \"red\"]\n  u [label = \"U\" pos = \"1, 1!\", fillcolor = \"white\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> y\n  z -> x\n  u -> {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-889de3b5b42b1150b77c" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-889de3b5b42b1150b77c">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  y [label = \"Y\"  pos = \"2,0!\"]\n  z [label = \"Z\" pos = \"-1, 1!\", fontcolor = \"red\"]\n  u [label = \"U\" pos = \"1, 1!\", fillcolor = \"white\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> y\n  z -> x\n  u -> {x y}\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### Regression
@@ -1577,8 +1603,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-3a416be1a6cf8647bd90" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-3a416be1a6cf8647bd90">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  z [label = \"Z\"  pos = \"1,1!\"]\n  y [label = \"Y\" pos = \"2,0!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> z\n  z -> y\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e791cd702b7ad347bb39" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e791cd702b7ad347bb39">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  z [label = \"Z\"  pos = \"1,1!\"]\n  y [label = \"Y\" pos = \"2,0!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  x -> z\n  z -> y\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -1751,8 +1777,8 @@ g
 ```
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-84f3a6ea3ed48107444d" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-84f3a6ea3ed48107444d">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  z [label = \"Z\"  pos = \"1,1!\"]\n  y [label = \"Y\" pos = \"2,0!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  z -> x\n  z -> y\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2dd532aefad7d6f9b536" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2dd532aefad7d6f9b536">{"x":{"diagram":"\ndigraph neato {\n  \n  graph[layout = neato]\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 16,\n    fillcolor = lightblue\n    ]\n  \n  # labels for each node\n  x [label = \"X\" pos = \"0,0!\"]\n  z [label = \"Z\"  pos = \"1,1!\"]\n  y [label = \"Y\" pos = \"2,0!\"]\n  \n  # edges between nodes\n  edge [color = black]\n  z -> x\n  z -> y\n\n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -2077,9 +2103,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -2088,39 +2114,39 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3   forcats_1.0.0     stringr_1.5.1     dplyr_1.1.4      
+ [1] lubridate_1.9.2   forcats_1.0.0     stringr_1.5.0     dplyr_1.1.4      
  [5] purrr_1.0.2       readr_2.1.4       tidyr_1.3.0       tibble_3.2.1     
  [9] ggplot2_3.4.4     tidyverse_2.0.0   rsvg_2.6.0        DiagrammeRsvg_0.1
-[13] DiagrammeR_1.0.10 broom_1.0.5       multilevel_2.7    nlme_3.1-164     
-[17] mediation_4.5.0   sandwich_3.1-0    mvtnorm_1.2-4     Matrix_1.6-4     
-[21] MASS_7.3-60       janitor_2.2.0     kableExtra_1.3.4  knitr_1.45       
+[13] DiagrammeR_1.0.10 broom_1.0.5       multilevel_2.7    nlme_3.1-162     
+[17] mediation_4.5.0   sandwich_3.1-0    mvtnorm_1.2-3     Matrix_1.6-4     
+[21] MASS_7.3-58.4     janitor_2.2.0     kableExtra_1.3.4  knitr_1.42       
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.2.0   viridisLite_0.4.2  farver_2.1.1       fastmap_1.1.1     
- [5] digest_0.6.33      rpart_4.1.23       timechange_0.2.0   lifecycle_1.0.4   
- [9] cluster_2.1.6      ellipsis_0.3.2     magrittr_2.0.3     compiler_4.3.2    
-[13] rlang_1.1.2        Hmisc_5.1-1        sass_0.4.8         tools_4.3.2       
-[17] utf8_1.2.4         yaml_2.3.8         data.table_1.14.10 labeling_0.4.3    
-[21] htmlwidgets_1.6.4  curl_5.2.0         xml2_1.3.6         RColorBrewer_1.1-3
-[25] withr_2.5.2        foreign_0.8-86     nnet_7.3-19        grid_4.3.2        
-[29] fansi_1.0.6        colorspace_2.1-0   scales_1.3.0       cli_3.6.2         
-[33] crayon_1.5.2       rmarkdown_2.25     generics_0.1.3     rstudioapi_0.15.0 
-[37] tzdb_0.4.0         httr_1.4.7         visNetwork_2.1.2   minqa_1.2.6       
-[41] cachem_1.0.8       splines_4.3.2      rvest_1.0.3        base64enc_0.1-3   
-[45] vctrs_0.6.5        V8_4.4.1           boot_1.3-28.1      webshot_0.5.5     
-[49] jsonlite_1.8.8     bookdown_0.37      hms_1.1.3          Formula_1.2-5     
-[53] htmlTable_2.4.2    systemfonts_1.0.5  jquerylib_0.1.4    glue_1.6.2        
-[57] nloptr_2.0.3       stringi_1.8.3      gtable_0.3.4       lme4_1.1-35.1     
-[61] munsell_0.5.0      pillar_1.9.0       htmltools_0.5.7    R6_2.5.1          
-[65] evaluate_0.23      lpSolve_5.6.20     lattice_0.22-5     highr_0.10        
-[69] backports_1.4.1    snakecase_0.11.1   bslib_0.6.1        Rcpp_1.0.11       
-[73] svglite_2.1.3      gridExtra_2.3      checkmate_2.3.1    xfun_0.41         
+ [5] digest_0.6.31      rpart_4.1.19       timechange_0.2.0   lifecycle_1.0.3   
+ [9] cluster_2.1.4      ellipsis_0.3.2     magrittr_2.0.3     compiler_4.3.0    
+[13] rlang_1.1.1        Hmisc_5.1-1        sass_0.4.6         tools_4.3.0       
+[17] utf8_1.2.3         yaml_2.3.7         data.table_1.14.8  labeling_0.4.2    
+[21] htmlwidgets_1.6.2  curl_5.0.1         xml2_1.3.4         RColorBrewer_1.1-3
+[25] withr_2.5.0        foreign_0.8-84     nnet_7.3-18        grid_4.3.0        
+[29] fansi_1.0.4        colorspace_2.1-0   scales_1.3.0       cli_3.6.1         
+[33] crayon_1.5.2       rmarkdown_2.21     generics_0.1.3     rstudioapi_0.14   
+[37] tzdb_0.4.0         httr_1.4.6         visNetwork_2.1.2   minqa_1.2.5       
+[41] cachem_1.0.8       splines_4.3.0      rvest_1.0.3        base64enc_0.1-3   
+[45] vctrs_0.6.5        V8_4.4.1           boot_1.3-28.1      webshot_0.5.4     
+[49] jsonlite_1.8.4     bookdown_0.34      hms_1.1.3          Formula_1.2-5     
+[53] htmlTable_2.4.2    systemfonts_1.0.4  jquerylib_0.1.4    glue_1.6.2        
+[57] nloptr_2.0.3       stringi_1.7.12     gtable_0.3.3       lme4_1.1-35.1     
+[61] munsell_0.5.0      pillar_1.9.0       htmltools_0.5.5    R6_2.5.1          
+[65] evaluate_0.21      lpSolve_5.6.20     lattice_0.21-8     highr_0.10        
+[69] backports_1.4.1    snakecase_0.11.0   bslib_0.4.2        Rcpp_1.0.10       
+[73] svglite_2.1.1      gridExtra_2.3      checkmate_2.2.0    xfun_0.39         
 [77] zoo_1.8-12         pkgconfig_2.0.3   
 ```

@@ -23,6 +23,14 @@ library("pwr")        # for power calculations
 library("tidyverse")  # for wrangling, plotting, etc. 
 ```
 
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
+```
+
 
 ```r
 theme_set(theme_classic() + #set the theme 
@@ -1365,6 +1373,8 @@ set.seed(1)
 
 ### Misc
 
+- [Sample size justification](https://lakens.github.io/statistical_inferences/08-samplesizejustification.html)
+- [Guide to reporting effect sizes and confidence intervals](https://matthewbjane.quarto.pub/)
 - [Getting started with `pwr`](https://cran.r-project.org/web/packages/pwr/vignettes/pwr-vignette.html)
 - [Visualize power](https://rpsychologist.com/d3/NHST/)
 - [Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full)
@@ -1383,9 +1393,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -1394,37 +1404,37 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3  forcats_1.0.0    stringr_1.5.1    dplyr_1.1.4     
+ [1] lubridate_1.9.2  forcats_1.0.0    stringr_1.5.0    dplyr_1.1.4     
  [5] purrr_1.0.2      readr_2.1.4      tidyr_1.3.0      tibble_3.2.1    
  [9] ggplot2_3.4.4    tidyverse_2.0.0  pwr_1.3-0        effectsize_0.8.6
-[13] magrittr_2.0.3   broom_1.0.5      kableExtra_1.3.4 knitr_1.45      
+[13] magrittr_2.0.3   broom_1.0.5      kableExtra_1.3.4 knitr_1.42      
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.2.0   viridisLite_0.4.2  farver_2.1.1       fastmap_1.1.1     
- [5] bayestestR_0.13.1  digest_0.6.33      rpart_4.1.23       estimability_1.4.1
- [9] timechange_0.2.0   lifecycle_1.0.4    cluster_2.1.6      compiler_4.3.2    
-[13] rlang_1.1.2        Hmisc_5.1-1        sass_0.4.8         tools_4.3.2       
-[17] utf8_1.2.4         yaml_2.3.8         data.table_1.14.10 htmlwidgets_1.6.4 
-[21] labeling_0.4.3     bit_4.0.5          xml2_1.3.6         withr_2.5.2       
-[25] foreign_0.8-86     nnet_7.3-19        grid_4.3.2         datawizard_0.9.1  
-[29] fansi_1.0.6        xtable_1.8-4       colorspace_2.1-0   emmeans_1.9.0     
-[33] scales_1.3.0       insight_0.19.7     cli_3.6.2          mvtnorm_1.2-4     
-[37] rmarkdown_2.25     crayon_1.5.2       generics_0.1.3     rstudioapi_0.15.0 
-[41] httr_1.4.7         tzdb_0.4.0         parameters_0.21.3  cachem_1.0.8      
-[45] splines_4.3.2      rvest_1.0.3        parallel_4.3.2     base64enc_0.1-3   
-[49] vctrs_0.6.5        webshot_0.5.5      Matrix_1.6-4       jsonlite_1.8.8    
-[53] bookdown_0.37      hms_1.1.3          bit64_4.0.5        htmlTable_2.4.2   
-[57] Formula_1.2-5      systemfonts_1.0.5  jquerylib_0.1.4    glue_1.6.2        
-[61] stringi_1.8.3      gtable_0.3.4       munsell_0.5.0      pillar_1.9.0      
-[65] htmltools_0.5.7    R6_2.5.1           vroom_1.6.5        evaluate_0.23     
-[69] lattice_0.22-5     highr_0.10         backports_1.4.1    bslib_0.6.1       
-[73] checkmate_2.3.1    svglite_2.1.3      coda_0.19-4        gridExtra_2.3     
-[77] nlme_3.1-164       mgcv_1.9-1         xfun_0.41          pkgconfig_2.0.3   
+ [5] bayestestR_0.13.1  digest_0.6.31      rpart_4.1.19       estimability_1.4.1
+ [9] timechange_0.2.0   lifecycle_1.0.3    cluster_2.1.4      compiler_4.3.0    
+[13] rlang_1.1.1        Hmisc_5.1-1        sass_0.4.6         tools_4.3.0       
+[17] utf8_1.2.3         yaml_2.3.7         data.table_1.14.8  htmlwidgets_1.6.2 
+[21] labeling_0.4.2     bit_4.0.5          xml2_1.3.4         withr_2.5.0       
+[25] foreign_0.8-84     nnet_7.3-18        grid_4.3.0         datawizard_0.9.1  
+[29] fansi_1.0.4        xtable_1.8-4       colorspace_2.1-0   emmeans_1.9.0     
+[33] scales_1.3.0       insight_0.19.7     cli_3.6.1          mvtnorm_1.2-3     
+[37] rmarkdown_2.21     crayon_1.5.2       generics_0.1.3     rstudioapi_0.14   
+[41] httr_1.4.6         tzdb_0.4.0         parameters_0.21.3  cachem_1.0.8      
+[45] splines_4.3.0      rvest_1.0.3        parallel_4.3.0     base64enc_0.1-3   
+[49] vctrs_0.6.5        webshot_0.5.4      Matrix_1.6-4       jsonlite_1.8.4    
+[53] bookdown_0.34      hms_1.1.3          bit64_4.0.5        htmlTable_2.4.2   
+[57] Formula_1.2-5      systemfonts_1.0.4  jquerylib_0.1.4    glue_1.6.2        
+[61] stringi_1.7.12     gtable_0.3.3       munsell_0.5.0      pillar_1.9.0      
+[65] htmltools_0.5.5    R6_2.5.1           vroom_1.6.3        evaluate_0.21     
+[69] lattice_0.21-8     highr_0.10         backports_1.4.1    bslib_0.4.2       
+[73] checkmate_2.2.0    svglite_2.1.1      coda_0.19-4        gridExtra_2.3     
+[77] nlme_3.1-162       mgcv_1.8-42        xfun_0.39          pkgconfig_2.0.3   
 ```

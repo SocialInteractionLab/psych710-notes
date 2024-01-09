@@ -18,7 +18,17 @@ Let's first load the packages that we need for this chapter. You can click on th
 ```r
 library("knitr")     # for rendering the RMarkdown file
 library("tidyverse") # for plotting (and many more cool things we'll discover later)
+```
 
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
+```
+
+```r
 # these options here change the formatting of how comments are rendered
 # in RMarkdown 
 opts_chunk$set(comment = "",
@@ -28,6 +38,11 @@ opts_chunk$set(comment = "",
 The `tidyverse` is a collection of packages that includes `ggplot2`.
 
 ## Why visualize data?
+
+<div class="figure">
+<img src="figures/hiding_data.png" alt="Are you hiding anything?" width="95%" />
+<p class="caption">(\#fig:hiding)Are you hiding anything?</p>
+</div>
 
 > The greatest value of a picture is when it forces us to notice what we never expected to see. — John Tukey
 
@@ -987,9 +1002,9 @@ Here, I've set `color = "black"` within the `geom_smooth()` function, and now on
 
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -998,34 +1013,34 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [1] lubridate_1.9.2 forcats_1.0.0   stringr_1.5.0   dplyr_1.1.4    
  [5] purrr_1.0.2     readr_2.1.4     tidyr_1.3.0     tibble_3.2.1   
- [9] ggplot2_3.4.4   tidyverse_2.0.0 knitr_1.45     
+ [9] ggplot2_3.4.4   tidyverse_2.0.0 knitr_1.42     
 
 loaded via a namespace (and not attached):
- [1] sass_0.4.8         utf8_1.2.4         generics_0.1.3     lattice_0.22-5    
- [5] stringi_1.8.3      hms_1.1.3          digest_0.6.33      magrittr_2.0.3    
- [9] evaluate_0.23      grid_4.3.2         timechange_0.2.0   bookdown_0.37     
-[13] fastmap_1.1.1      Matrix_1.6-4       jsonlite_1.8.8     backports_1.4.1   
-[17] nnet_7.3-19        Formula_1.2-5      gridExtra_2.3      mgcv_1.9-1        
-[21] fansi_1.0.6        viridisLite_0.4.2  scales_1.3.0       jquerylib_0.1.4   
-[25] cli_3.6.2          crayon_1.5.2       rlang_1.1.2        splines_4.3.2     
-[29] munsell_0.5.0      Hmisc_5.1-1        base64enc_0.1-3    withr_2.5.2       
-[33] cachem_1.0.8       yaml_2.3.8         tools_4.3.2        tzdb_0.4.0        
-[37] checkmate_2.3.1    htmlTable_2.4.2    colorspace_2.1-0   rpart_4.1.23      
-[41] vctrs_0.6.5        R6_2.5.1           lifecycle_1.0.4    htmlwidgets_1.6.4 
-[45] foreign_0.8-86     cluster_2.1.6      pkgconfig_2.0.3    pillar_1.9.0      
-[49] bslib_0.6.1        gtable_0.3.4       data.table_1.14.10 glue_1.6.2        
-[53] xfun_0.41          tidyselect_1.2.0   highr_0.10         rstudioapi_0.15.0 
-[57] farver_2.1.1       nlme_3.1-164       htmltools_0.5.7    rmarkdown_2.25    
-[61] labeling_0.4.3     compiler_4.3.2    
+ [1] sass_0.4.6        utf8_1.2.3        generics_0.1.3    lattice_0.21-8   
+ [5] stringi_1.7.12    hms_1.1.3         digest_0.6.31     magrittr_2.0.3   
+ [9] evaluate_0.21     grid_4.3.0        timechange_0.2.0  bookdown_0.34    
+[13] fastmap_1.1.1     Matrix_1.6-4      jsonlite_1.8.4    backports_1.4.1  
+[17] nnet_7.3-18       Formula_1.2-5     gridExtra_2.3     mgcv_1.8-42      
+[21] fansi_1.0.4       viridisLite_0.4.2 scales_1.3.0      jquerylib_0.1.4  
+[25] cli_3.6.1         crayon_1.5.2      rlang_1.1.1       splines_4.3.0    
+[29] munsell_0.5.0     Hmisc_5.1-1       base64enc_0.1-3   withr_2.5.0      
+[33] cachem_1.0.8      yaml_2.3.7        tools_4.3.0       tzdb_0.4.0       
+[37] checkmate_2.2.0   htmlTable_2.4.2   colorspace_2.1-0  rpart_4.1.19     
+[41] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.3   htmlwidgets_1.6.2
+[45] foreign_0.8-84    cluster_2.1.4     pkgconfig_2.0.3   pillar_1.9.0     
+[49] bslib_0.4.2       gtable_0.3.3      data.table_1.14.8 glue_1.6.2       
+[53] xfun_0.39         tidyselect_1.2.0  highr_0.10        rstudioapi_0.14  
+[57] farver_2.1.1      nlme_3.1-162      htmltools_0.5.5   rmarkdown_2.21   
+[61] labeling_0.4.2    compiler_4.3.0   
 ```
 
 <div class="figure">

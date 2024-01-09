@@ -44,6 +44,7 @@ Special thanks go to my teaching teams:
   - Satchel Grant 
   - Shawn Schwartz
 - 2023: 
+  - Nilam Ram (instructor)
   - Ari Beller
   - Yoonji Lee
   - Satchel Grant 
@@ -142,9 +143,9 @@ library("statsExpressions") # for extracting stats results APA style
 
 
 ```
-## R version 4.3.2 (2023-10-31)
+## R version 4.3.0 (2023-04-21)
 ## Platform: aarch64-apple-darwin20 (64-bit)
-## Running under: macOS Sonoma 14.1.2
+## Running under: macOS 14.1.1
 ## 
 ## Matrix products: default
 ## BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -153,16 +154,16 @@ library("statsExpressions") # for extracting stats results APA style
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
-## time zone: America/Los_Angeles
+## time zone: America/Chicago
 ## tzcode source: internal
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] digest_0.6.33   R6_2.5.1        bookdown_0.37   fastmap_1.1.1  
-##  [5] xfun_0.41       cachem_1.0.8    knitr_1.45      htmltools_0.5.7
-##  [9] rmarkdown_2.25  lifecycle_1.0.4 cli_3.6.2       sass_0.4.8     
-## [13] jquerylib_0.1.4 compiler_4.3.2  tools_4.3.2     evaluate_0.23  
-## [17] bslib_0.6.1     yaml_2.3.8      rlang_1.1.2     jsonlite_1.8.8
+##  [1] digest_0.6.31   R6_2.5.1        bookdown_0.34   fastmap_1.1.1  
+##  [5] xfun_0.39       cachem_1.0.8    knitr_1.42      htmltools_0.5.5
+##  [9] rmarkdown_2.21  cli_3.6.1       sass_0.4.6      jquerylib_0.1.4
+## [13] compiler_4.3.0  tools_4.3.0     evaluate_0.21   bslib_0.4.2    
+## [17] yaml_2.3.7      rlang_1.1.1     jsonlite_1.8.4
 ```

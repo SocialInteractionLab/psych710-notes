@@ -11,6 +11,14 @@ library("broom")      # for tidying up linear models
 library("tidyverse")  # for wrangling, plotting, etc. 
 ```
 
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
+```
+
 
 ```r
 theme_set(theme_classic() + #set the theme 
@@ -1054,9 +1062,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -1065,33 +1073,33 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3  forcats_1.0.0    stringr_1.5.1    dplyr_1.1.4     
+ [1] lubridate_1.9.2  forcats_1.0.0    stringr_1.5.0    dplyr_1.1.4     
  [5] purrr_1.0.2      readr_2.1.4      tidyr_1.3.0      tibble_3.2.1    
  [9] ggplot2_3.4.4    tidyverse_2.0.0  broom_1.0.5      janitor_2.2.0   
-[13] kableExtra_1.3.4 knitr_1.45      
+[13] kableExtra_1.3.4 knitr_1.42      
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.4      xfun_0.41         bslib_0.6.1       lattice_0.22-5   
- [5] tzdb_0.4.0        vctrs_0.6.5       tools_4.3.2       generics_0.1.3   
- [9] parallel_4.3.2    fansi_1.0.6       highr_0.10        pkgconfig_2.0.3  
-[13] Matrix_1.6-4      webshot_0.5.5     lifecycle_1.0.4   compiler_4.3.2   
-[17] farver_2.1.1      munsell_0.5.0     snakecase_0.11.1  htmltools_0.5.7  
-[21] sass_0.4.8        yaml_2.3.8        pillar_1.9.0      crayon_1.5.2     
-[25] jquerylib_0.1.4   ellipsis_0.3.2    cachem_1.0.8      nlme_3.1-164     
-[29] tidyselect_1.2.0  rvest_1.0.3       digest_0.6.33     stringi_1.8.3    
-[33] bookdown_0.37     labeling_0.4.3    splines_4.3.2     fastmap_1.1.1    
-[37] grid_4.3.2        colorspace_2.1-0  cli_3.6.2         magrittr_2.0.3   
-[41] utf8_1.2.4        withr_2.5.2       scales_1.3.0      backports_1.4.1  
-[45] bit64_4.0.5       timechange_0.2.0  rmarkdown_2.25    httr_1.4.7       
-[49] bit_4.0.5         png_0.1-8         hms_1.1.3         evaluate_0.23    
-[53] viridisLite_0.4.2 mgcv_1.9-1        rlang_1.1.2       glue_1.6.2       
-[57] xml2_1.3.6        svglite_2.1.3     rstudioapi_0.15.0 vroom_1.6.5      
-[61] jsonlite_1.8.8    R6_2.5.1          systemfonts_1.0.5
+ [1] gtable_0.3.3      xfun_0.39         bslib_0.4.2       lattice_0.21-8   
+ [5] tzdb_0.4.0        vctrs_0.6.5       tools_4.3.0       generics_0.1.3   
+ [9] parallel_4.3.0    fansi_1.0.4       highr_0.10        pkgconfig_2.0.3  
+[13] Matrix_1.6-4      webshot_0.5.4     lifecycle_1.0.3   compiler_4.3.0   
+[17] farver_2.1.1      munsell_0.5.0     snakecase_0.11.0  htmltools_0.5.5  
+[21] sass_0.4.6        yaml_2.3.7        pillar_1.9.0      crayon_1.5.2     
+[25] jquerylib_0.1.4   ellipsis_0.3.2    cachem_1.0.8      nlme_3.1-162     
+[29] tidyselect_1.2.0  rvest_1.0.3       digest_0.6.31     stringi_1.7.12   
+[33] bookdown_0.34     labeling_0.4.2    splines_4.3.0     fastmap_1.1.1    
+[37] grid_4.3.0        colorspace_2.1-0  cli_3.6.1         magrittr_2.0.3   
+[41] utf8_1.2.3        withr_2.5.0       scales_1.3.0      backports_1.4.1  
+[45] bit64_4.0.5       timechange_0.2.0  rmarkdown_2.21    httr_1.4.6       
+[49] bit_4.0.5         png_0.1-8         hms_1.1.3         evaluate_0.21    
+[53] viridisLite_0.4.2 mgcv_1.8-42       rlang_1.1.1       glue_1.6.2       
+[57] xml2_1.3.4        svglite_2.1.1     rstudioapi_0.14   vroom_1.6.3      
+[61] jsonlite_1.8.4    R6_2.5.1          systemfonts_1.0.4
 ```

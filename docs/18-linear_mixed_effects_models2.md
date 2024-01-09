@@ -1195,9 +1195,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -1206,41 +1206,41 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3     forcats_1.0.0       stringr_1.5.1      
+ [1] lubridate_1.9.2     forcats_1.0.0       stringr_1.5.0      
  [4] dplyr_1.1.4         purrr_1.0.2         readr_2.1.4        
  [7] tidyr_1.3.0         tibble_3.2.1        ggplot2_3.4.4      
 [10] tidyverse_2.0.0     see_0.8.1           performance_0.10.8 
 [13] lme4_1.1-35.1       Matrix_1.6-4        emmeans_1.9.0      
 [16] ggeffects_1.3.4     broom.mixed_0.2.9.4 janitor_2.2.0      
-[19] kableExtra_1.3.4    knitr_1.45         
+[19] kableExtra_1.3.4    knitr_1.42         
 
 loaded via a namespace (and not attached):
  [1] sjlabelled_1.2.0   tidyselect_1.2.0   viridisLite_0.4.2  farver_2.1.1      
- [5] fastmap_1.1.1      bayestestR_0.13.1  digest_0.6.33      estimability_1.4.1
- [9] timechange_0.2.0   lifecycle_1.0.4    magrittr_2.0.3     compiler_4.3.2    
-[13] rlang_1.1.2        sass_0.4.8         tools_4.3.2        utf8_1.2.4        
-[17] yaml_2.3.8         labeling_0.4.3     xml2_1.3.6         withr_2.5.2       
-[21] datawizard_0.9.1   grid_4.3.2         fansi_1.0.6        xtable_1.8-4      
-[25] colorspace_2.1-0   future_1.33.1      globals_0.16.2     scales_1.3.0      
-[29] MASS_7.3-60        insight_0.19.7     cli_3.6.2          mvtnorm_1.2-4     
-[33] crayon_1.5.2       rmarkdown_2.25     generics_0.1.3     rstudioapi_0.15.0 
-[37] httr_1.4.7         tzdb_0.4.0         minqa_1.2.6        cachem_1.0.8      
-[41] splines_4.3.2      rvest_1.0.3        parallel_4.3.2     vctrs_0.6.5       
-[45] boot_1.3-28.1      webshot_0.5.5      jsonlite_1.8.8     bookdown_0.37     
+ [5] fastmap_1.1.1      bayestestR_0.13.1  digest_0.6.31      estimability_1.4.1
+ [9] timechange_0.2.0   lifecycle_1.0.3    magrittr_2.0.3     compiler_4.3.0    
+[13] rlang_1.1.1        sass_0.4.6         tools_4.3.0        utf8_1.2.3        
+[17] yaml_2.3.7         labeling_0.4.2     xml2_1.3.4         withr_2.5.0       
+[21] datawizard_0.9.1   grid_4.3.0         fansi_1.0.4        xtable_1.8-4      
+[25] colorspace_2.1-0   future_1.32.0      globals_0.16.2     scales_1.3.0      
+[29] MASS_7.3-58.4      insight_0.19.7     cli_3.6.1          mvtnorm_1.2-3     
+[33] crayon_1.5.2       rmarkdown_2.21     generics_0.1.3     rstudioapi_0.14   
+[37] httr_1.4.6         tzdb_0.4.0         minqa_1.2.5        cachem_1.0.8      
+[41] splines_4.3.0      rvest_1.0.3        parallel_4.3.0     vctrs_0.6.5       
+[45] boot_1.3-28.1      webshot_0.5.4      jsonlite_1.8.4     bookdown_0.34     
 [49] patchwork_1.1.3    hms_1.1.3          ggrepel_0.9.4      pbkrtest_0.5.2    
-[53] listenv_0.9.0      systemfonts_1.0.5  jquerylib_0.1.4    glue_1.6.2        
-[57] parallelly_1.36.0  nloptr_2.0.3       codetools_0.2-19   stringi_1.8.3     
-[61] gtable_0.3.4       munsell_0.5.0      furrr_0.3.1        pillar_1.9.0      
-[65] htmltools_0.5.7    R6_2.5.1           evaluate_0.23      lattice_0.22-5    
-[69] haven_2.5.4        highr_0.10         backports_1.4.1    broom_1.0.5       
-[73] snakecase_0.11.1   bslib_0.6.1        Rcpp_1.0.11        svglite_2.1.3     
-[77] coda_0.19-4        nlme_3.1-164       mgcv_1.9-1         xfun_0.41         
+[53] listenv_0.9.0      systemfonts_1.0.4  jquerylib_0.1.4    glue_1.6.2        
+[57] parallelly_1.36.0  nloptr_2.0.3       codetools_0.2-19   stringi_1.7.12    
+[61] gtable_0.3.3       munsell_0.5.0      furrr_0.3.1        pillar_1.9.0      
+[65] htmltools_0.5.5    R6_2.5.1           evaluate_0.21      lattice_0.21-8    
+[69] haven_2.5.2        highr_0.10         backports_1.4.1    broom_1.0.5       
+[73] snakecase_0.11.0   bslib_0.4.2        Rcpp_1.0.10        svglite_2.1.1     
+[77] coda_0.19-4        nlme_3.1-162       mgcv_1.8-42        xfun_0.39         
 [81] pkgconfig_2.0.3   
 ```

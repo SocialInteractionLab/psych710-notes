@@ -11,6 +11,14 @@ library("patchwork")
 library("tidyverse")
 ```
 
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
+```
+
 
 ```r
 theme_set(theme_classic() + #set the theme 
@@ -34,7 +42,7 @@ numbers %>%
 ```
 
 ```
- [1] 3 2 1 2 1 3 2 3 2 2
+ [1] 2 2 3 1 1 2 1 2 3 3
 ```
 
 Use the `prob = ` argument to change the probability with which each number should be drawn. 
@@ -50,7 +58,7 @@ numbers %>%
 ```
 
 ```
- [1] 1 1 1 1 1 1 2 1 1 2
+ [1] 1 1 1 1 1 1 2 1 1 1
 ```
 
 Make sure to set the seed in order to make your code reproducible. The code chunk below may give a different outcome each time is run. 
@@ -65,7 +73,7 @@ numbers %>%
 ```
 
 ```
-[1] 3 2 5 4 1
+[1] 3 2 1 4 5
 ```
 
 The chunk below will produce the same outcome every time it's run. 
@@ -1206,9 +1214,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -1217,30 +1225,30 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3  forcats_1.0.0    stringr_1.5.1    dplyr_1.1.4     
+ [1] lubridate_1.9.2  forcats_1.0.0    stringr_1.5.0    dplyr_1.1.4     
  [5] purrr_1.0.2      readr_2.1.4      tidyr_1.3.0      tibble_3.2.1    
- [9] ggplot2_3.4.4    tidyverse_2.0.0  patchwork_1.1.3  MASS_7.3-60     
-[13] kableExtra_1.3.4 knitr_1.45      
+ [9] ggplot2_3.4.4    tidyverse_2.0.0  patchwork_1.1.3  MASS_7.3-58.4   
+[13] kableExtra_1.3.4 knitr_1.42      
 
 loaded via a namespace (and not attached):
- [1] sass_0.4.8        utf8_1.2.4        generics_0.1.3    xml2_1.3.6       
- [5] stringi_1.8.3     hms_1.1.3         digest_0.6.33     magrittr_2.0.3   
- [9] timechange_0.2.0  evaluate_0.23     grid_4.3.2        bookdown_0.37    
-[13] fastmap_1.1.1     jsonlite_1.8.8    httr_1.4.7        rvest_1.0.3      
-[17] fansi_1.0.6       viridisLite_0.4.2 scales_1.3.0      jquerylib_0.1.4  
-[21] cli_3.6.2         crayon_1.5.2      rlang_1.1.2       munsell_0.5.0    
-[25] withr_2.5.2       cachem_1.0.8      yaml_2.3.8        tools_4.3.2      
-[29] tzdb_0.4.0        colorspace_2.1-0  webshot_0.5.5     vctrs_0.6.5      
-[33] R6_2.5.1          lifecycle_1.0.4   pkgconfig_2.0.3   pillar_1.9.0     
-[37] bslib_0.6.1       gtable_0.3.4      glue_1.6.2        systemfonts_1.0.5
-[41] highr_0.10        xfun_0.41         tidyselect_1.2.0  rstudioapi_0.15.0
-[45] farver_2.1.1      htmltools_0.5.7   labeling_0.4.3    rmarkdown_2.25   
-[49] svglite_2.1.3     compiler_4.3.2   
+ [1] sass_0.4.6        utf8_1.2.3        generics_0.1.3    xml2_1.3.4       
+ [5] stringi_1.7.12    hms_1.1.3         digest_0.6.31     magrittr_2.0.3   
+ [9] timechange_0.2.0  evaluate_0.21     grid_4.3.0        bookdown_0.34    
+[13] fastmap_1.1.1     jsonlite_1.8.4    httr_1.4.6        rvest_1.0.3      
+[17] fansi_1.0.4       viridisLite_0.4.2 scales_1.3.0      jquerylib_0.1.4  
+[21] cli_3.6.1         crayon_1.5.2      rlang_1.1.1       munsell_0.5.0    
+[25] withr_2.5.0       cachem_1.0.8      yaml_2.3.7        tools_4.3.0      
+[29] tzdb_0.4.0        colorspace_2.1-0  webshot_0.5.4     vctrs_0.6.5      
+[33] R6_2.5.1          lifecycle_1.0.3   pkgconfig_2.0.3   pillar_1.9.0     
+[37] bslib_0.4.2       gtable_0.3.3      glue_1.6.2        systemfonts_1.0.4
+[41] highr_0.10        xfun_0.39         tidyselect_1.2.0  rstudioapi_0.14  
+[45] farver_2.1.1      htmltools_0.5.5   labeling_0.4.2    rmarkdown_2.21   
+[49] svglite_2.1.1     compiler_4.3.0   
 ```

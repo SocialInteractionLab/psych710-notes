@@ -29,8 +29,19 @@ library("knitr")     # for rendering the RMarkdown file
 library("patchwork") # for making figure panels
 library("ggridges")  # for making joyplots 
 library("gganimate") # for making animations
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
+
+```r
 library("gapminder") # data available from Gapminder.org 
 library("tidyverse") # for plotting (and many more cool things we'll discover later)
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.1
 ```
 
 And set some settings: 
@@ -918,9 +929,9 @@ sessionInfo()
 ```
 
 ```
-R version 4.3.2 (2023-10-31)
+R version 4.3.0 (2023-04-21)
 Platform: aarch64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.1.2
+Running under: macOS 14.1.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib 
@@ -929,33 +940,33 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlap
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
-time zone: America/Los_Angeles
+time zone: America/Chicago
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [1] lubridate_1.9.2 forcats_1.0.0   stringr_1.5.0   dplyr_1.1.4    
  [5] purrr_1.0.2     readr_2.1.4     tidyr_1.3.0     tibble_3.2.1   
  [9] tidyverse_2.0.0 gapminder_1.0.0 gganimate_1.0.8 ggplot2_3.4.4  
-[13] ggridges_0.5.5  patchwork_1.1.3 knitr_1.45     
+[13] ggridges_0.5.4  patchwork_1.1.3 knitr_1.42     
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.4       xfun_0.41          bslib_0.6.1        htmlwidgets_1.6.4 
- [5] tzdb_0.4.0         vctrs_0.6.5        tools_4.3.2        generics_0.1.3    
- [9] fansi_1.0.6        highr_0.10         cluster_2.1.6      pkgconfig_2.0.3   
-[13] data.table_1.14.10 checkmate_2.3.1    lifecycle_1.0.4    compiler_4.3.2    
-[17] farver_2.1.1       textshaping_0.3.7  progress_1.2.3     munsell_0.5.0     
-[21] htmltools_0.5.7    sass_0.4.8         yaml_2.3.8         htmlTable_2.4.2   
-[25] Formula_1.2-5      pillar_1.9.0       crayon_1.5.2       jquerylib_0.1.4   
-[29] cachem_1.0.8       Hmisc_5.1-1        rpart_4.1.23       tidyselect_1.2.0  
-[33] digest_0.6.33      stringi_1.8.3      bookdown_0.37      labeling_0.4.3    
-[37] fastmap_1.1.1      grid_4.3.2         colorspace_2.1-0   cli_3.6.2         
-[41] magrittr_2.0.3     base64enc_0.1-3    utf8_1.2.4         foreign_0.8-86    
-[45] withr_2.5.2        prettyunits_1.2.0  scales_1.3.0       backports_1.4.1   
-[49] timechange_0.2.0   rmarkdown_2.25     nnet_7.3-19        gridExtra_2.3     
-[53] ragg_1.2.7         png_0.1-8          hms_1.1.3          evaluate_0.23     
-[57] viridisLite_0.4.2  rlang_1.1.2        glue_1.6.2         tweenr_2.0.2      
-[61] rstudioapi_0.15.0  jsonlite_1.8.8     R6_2.5.1           systemfonts_1.0.5 
+ [1] gtable_0.3.3      xfun_0.39         bslib_0.4.2       htmlwidgets_1.6.2
+ [5] tzdb_0.4.0        vctrs_0.6.5       tools_4.3.0       generics_0.1.3   
+ [9] fansi_1.0.4       highr_0.10        cluster_2.1.4     pkgconfig_2.0.3  
+[13] data.table_1.14.8 checkmate_2.2.0   lifecycle_1.0.3   compiler_4.3.0   
+[17] farver_2.1.1      textshaping_0.3.6 progress_1.2.2    munsell_0.5.0    
+[21] htmltools_0.5.5   sass_0.4.6        yaml_2.3.7        htmlTable_2.4.2  
+[25] Formula_1.2-5     pillar_1.9.0      crayon_1.5.2      jquerylib_0.1.4  
+[29] cachem_1.0.8      Hmisc_5.1-1       rpart_4.1.19      tidyselect_1.2.0 
+[33] digest_0.6.31     stringi_1.7.12    bookdown_0.34     labeling_0.4.2   
+[37] fastmap_1.1.1     grid_4.3.0        colorspace_2.1-0  cli_3.6.1        
+[41] magrittr_2.0.3    base64enc_0.1-3   utf8_1.2.3        foreign_0.8-84   
+[45] withr_2.5.0       prettyunits_1.1.1 scales_1.3.0      backports_1.4.1  
+[49] timechange_0.2.0  rmarkdown_2.21    nnet_7.3-18       gridExtra_2.3    
+[53] ragg_1.2.5        png_0.1-8         hms_1.1.3         evaluate_0.21    
+[57] viridisLite_0.4.2 rlang_1.1.1       glue_1.6.2        tweenr_2.0.2     
+[61] rstudioapi_0.14   jsonlite_1.8.4    R6_2.5.1          systemfonts_1.0.4
 ```
