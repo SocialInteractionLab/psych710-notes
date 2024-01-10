@@ -1,4 +1,4 @@
-# Simulation 1
+# Estimation
 
 ## Load packages and set plotting theme
 
@@ -17,84 +17,6 @@ theme_set(theme_classic() + #set the theme
 opts_chunk$set(comment = "",
                fig.show = "hold")
 ```
-
-## Sampling
-
-### Drawing numbers from a vector
-
-```{r}
-numbers = 1:3
-
-numbers %>% 
-  sample(size = 10,
-         replace = T)
-```
-
-Use the `prob = ` argument to change the probability with which each number should be drawn. 
-
-```{r}
-numbers = 1:3
-
-numbers %>% 
-  sample(size = 10,
-         replace = T,
-         prob = c(0.8, 0.1, 0.1))
-```
-
-Make sure to set the seed in order to make your code reproducible. The code chunk below may give a different outcome each time is run. 
-
-
-```{r no-seed}
-numbers = 1:5
-
-numbers %>% 
-  sample(5)
-```
-
-The chunk below will produce the same outcome every time it's run. 
-
-```{r with-seed}
-set.seed(1)
-
-numbers = 1:5
-
-numbers %>% 
-  sample(5)
-```
-
-### Drawing rows from a data frame
-
-Generate a data frame. 
-
-```{r}
-set.seed(1)
-n = 10
-df.data = tibble(trial = 1:n,
-                 stimulus = sample(c("flower", "pet"), size = n, replace = T),
-                 rating = sample(1:10, size = n, replace = T))
-```
-
-Sample a given number of rows. 
-
-```{r}
-set.seed(1)
-df.data %>% 
-  slice_sample(n = 6, 
-               replace = T)
-```
-
-```{r}
-set.seed(1)
-df.data %>% 
-  slice_sample(prop = 0.5)
-```
-
-Note that there is a whole family of `slice()` functions in dplyr. Take a look at the help file here: 
-
-```{r, eval=FALSE}
-help(slice)
-```
-
 
 ## Working with distributions
 
@@ -223,6 +145,7 @@ ggplot(data = df.plot,
 # remove all variables with tmp in their name 
 rm(list = ls() %>% str_subset(pattern = "tmp."))
 ```
+
 With 10,000 samples, our histogram of samples already closely resembles the theoretical shape of the normal distribution. 
 
 To keep my environment clean, I've named the parameters `tmp.nsamples` and `tmp.binwidth` and then, at the end of the code chunk, I removed all variables from the environment that have "tmp." in their name using the `ls()` function (which prints out all variables in the environment as a vector), and the `str_subset()` function which filters out only those variables that contain the specified pattern.
@@ -379,8 +302,7 @@ p = p +
 p
 ```
 
-
-### Cumulative probability distribution
+### Cumulative probability distributions
 
 ```{r}
 ggplot(data = tibble(height = c(150, 210)),
@@ -550,7 +472,6 @@ We find that ~34% of the heights are between 170 and 180 cm.
 
 We can also compute the probability of observing certain events using sampling. We first generate samples from the desired probability distribution, and then use these samples to compute our statistic of interest. 
 
-
 ```{r}
 # let's compute the probability of observing a value within a certain range 
 tmp.lower = 170
@@ -596,83 +517,34 @@ ggplot(data = df.samples,
 # remove all variables with tmp in their name 
 rm(list = str_subset(string = ls(), pattern = "tmp."))
 ```
-## Breakout room exercise
 
-### Make the plot
 
-```{r}
-ggplot(data = tibble(height = c(30, 70)),
-       mapping = aes(x = height)) +
-  stat_function(fun = ~ dgamma(., shape = 50, rate = 1))
+## Estimating a coin 
+
+```{r, fig.cap='A demonstration of the law of large numbers.'}
+
+# Example taken from here: http://statsthinking21.org/probability.html#empirical-frequency
+
+set.seed(1) # set the seed so that the outcome is consistent
+nsamples = 50000 # how many flips do we want to make?
+
+# create some random coin flips using the rbinom() function with
+# a true probability of 0.5
+
+df.samples = tibble(trial_number = seq(nsamples), 
+                    outcomes = rbinom(nsamples, 1, 0.5)) %>% 
+  mutate(mean_probability = cumsum(outcomes) / seq_along(outcomes)) %>% 
+  filter(trial_number >= 10) # start with a minimum sample of 10 flips
+
+ggplot(data = df.samples, 
+       mapping = aes(x = trial_number, y = mean_probability)) +
+  geom_hline(yintercept = 0.5, color = "gray", linetype = "dashed") +
+  geom_line() +
+  labs(x = "Number of trials",
+       y = "Estimated probability of heads") +
+  theme_classic() +
+  theme(text = element_text(size = 20))
 ```
-
-### Analytic solutions
-
-#### Question: A 60cm tall Penguin claims that no more than 10% are taller than her. Is she correct?
-
-```{r}
-1 - pgamma(60, shape = 50, rate = 1)
-```
-
-Answer: Yes, she is correct. Only ~ 8.4% of Penguins are taller than her. 
-
-#### Question:  Are there more penguins between 50 and 55cm or between 55 and 65cm?
-
-```{r}
-first_range = pgamma(55, shape = 50, rate = 1) - pgamma(50, shape = 50, rate = 1)
-second_range = pgamma(65, shape = 50, rate = 1) - pgamma(55, shape = 50, rate = 1)
-
-first_range - second_range
-```
-
-Answer: There are 4% more Penguins between 50 and 55cm than between 55 and 65 cm. 
-
-#### Question: What size is a Penguin who is taller than 75% of the rest?
-
-```{r}
-qgamma(0.75, shape = 50, rate = 1)
-```
-
-Answer: A Penguin who is ~54.6cm tall is taller than 75% of the rest. 
-
-### Sampling solution
-
-Let's just simulate a bunch of Penguins, yay! 
-
-```{r}
-set.seed(1)
-df.penguins = tibble(height = rgamma(n = 100000, shape = 50, rate = 1))
-```
-  
-#### Question: A 60cm tall Penguin claims that no more than 10% are taller than her. Is she correct?
-
-```{r}
-df.penguins %>% 
-  summarize(probability = sum(height > 60) / n())
-```
-
-Answer: Yes, she is correct. Only ~ 8.3% of Penguins are taller than her. 
-
-#### Question: Are there more penguins between 50 and 55cm or between 55 and 65cm?
-
-```{r}
-df.penguins %>% 
-  summarize(probability = (sum(between(height, 50, 55)) - sum(between(height, 55, 65)))/n())
-```
-
-Answer: There are 3.9% more Penguins between 50 and 55cm than between 55 and 65 cm. 
-
-#### Question: What size is a Penguin who is taller than 75% of the rest?
-
-```{r}
-df.penguins %>% 
-  arrange(height) %>%
-  slice_head(prop = 0.75) %>% 
-  summarize(height = max(height))
-```
-
-Answer: A Penguin who is ~54.6cm tall is taller than 75% of the rest.
-
 
 ## Bayesian inference with the normal distribution
 
@@ -680,7 +552,7 @@ Let's consider the following scenario. You are helping out at a summer camp. Thi
 
 When signing up for the camp, the children were asked for some demographic information including their height in cm. Unsurprisingly, the basketball players tend to be taller on average than the chess players. In fact, the basketball players' height is approximately normally distributed with a mean of 180cm and a standard deviation of 10cm. For the chess players, the mean height is 170cm with a standard deviation of 8cm. 
 
-At the camp site, a child walks over to you and asks you where their gym is. You gage that the child is around 175cm tall. Where should you direct the child to? To the basketball gym, or to the chess gym? 
+At the camp site, a child walks over to you and asks you where their gym is. You gauge that the child is around 175cm tall. Where should you direct the child to? To the basketball gym, or to the chess gym? 
 
 ### Analytic solution
 

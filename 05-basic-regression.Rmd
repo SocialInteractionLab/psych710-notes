@@ -1,4 +1,4 @@
-# Linear model 2
+# Linear regression
 
 ## Learning goals
 

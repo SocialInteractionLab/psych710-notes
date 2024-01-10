@@ -1,4 +1,4 @@
-# Simulation 2
+# Inference
 
 In which we figure out some key statistical concepts through simulation and plotting. On the menu we have: 
 
