@@ -1,4 +1,4 @@
-# Simulation 1
+# Estimation
 
 ## Load packages and set plotting theme
 
@@ -27,131 +27,6 @@ theme_set(theme_classic() + #set the theme
 opts_chunk$set(comment = "",
                fig.show = "hold")
 ```
-
-## Sampling
-
-### Drawing numbers from a vector
-
-
-```r
-numbers = 1:3
-
-numbers %>% 
-  sample(size = 10,
-         replace = T)
-```
-
-```
- [1] 3 2 3 1 3 1 1 2 3 2
-```
-
-Use the `prob = ` argument to change the probability with which each number should be drawn. 
-
-
-```r
-numbers = 1:3
-
-numbers %>% 
-  sample(size = 10,
-         replace = T,
-         prob = c(0.8, 0.1, 0.1))
-```
-
-```
- [1] 1 1 3 2 1 1 1 3 2 1
-```
-
-Make sure to set the seed in order to make your code reproducible. The code chunk below may give a different outcome each time is run. 
-
-
-
-```r
-numbers = 1:5
-
-numbers %>% 
-  sample(5)
-```
-
-```
-[1] 1 5 3 4 2
-```
-
-The chunk below will produce the same outcome every time it's run. 
-
-
-```r
-set.seed(1)
-
-numbers = 1:5
-
-numbers %>% 
-  sample(5)
-```
-
-```
-[1] 1 4 3 5 2
-```
-
-### Drawing rows from a data frame
-
-Generate a data frame. 
-
-
-```r
-set.seed(1)
-n = 10
-df.data = tibble(trial = 1:n,
-                 stimulus = sample(c("flower", "pet"), size = n, replace = T),
-                 rating = sample(1:10, size = n, replace = T))
-```
-
-Sample a given number of rows. 
-
-
-```r
-set.seed(1)
-df.data %>% 
-  slice_sample(n = 6, 
-               replace = T)
-```
-
-```
-# A tibble: 6 × 3
-  trial stimulus rating
-  <int> <chr>     <int>
-1     9 pet           9
-2     4 flower        5
-3     7 flower       10
-4     1 flower        3
-5     2 pet           1
-6     7 flower       10
-```
-
-
-```r
-set.seed(1)
-df.data %>% 
-  slice_sample(prop = 0.5)
-```
-
-```
-# A tibble: 5 × 3
-  trial stimulus rating
-  <int> <chr>     <int>
-1     9 pet           9
-2     4 flower        5
-3     7 flower       10
-4     1 flower        3
-5     2 pet           1
-```
-
-Note that there is a whole family of `slice()` functions in dplyr. Take a look at the help file here: 
-
-
-```r
-help(slice)
-```
-
 
 ## Working with distributions
 
@@ -204,7 +79,7 @@ ggplot(data = tibble(height = c(150, 210)),
   stat_function(fun = ~ dnorm(., mean = 180, sd = 10))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 Note that the data frame I created with `tibble()` only needs to have the minimum and the maximum value of the x-range that we are interested in. Here, I chose `150` and `210` as the minimum and maximum, respectively (which is the mean +/- 3 standard deviations). 
 
@@ -224,7 +99,7 @@ ggplot(data = tibble(x = c(-5, 5)),
   stat_function(fun = ~ fun.breakpoint(., breakpoint = 2))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 Here, I defined a breakpoint function. If the value of `x` is below the breakpoint, `y` equals the value of the breakpoint. If the value of `x` is greater than the breakpoint, then `y` equals `x`. 
 
@@ -259,7 +134,7 @@ ggplot(data = df.plot,
 rm(list = ls() %>% str_subset(pattern = "tmp."))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 Let's see how many samples it takes to closely approximate the shape of the normal distribution with our histogram of samples. 
 
@@ -320,7 +195,8 @@ Call `lifecycle::last_lifecycle_warnings()` to see where this warning was genera
 rm(list = ls() %>% str_subset(pattern = "tmp."))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
 With 10,000 samples, our histogram of samples already closely resembles the theoretical shape of the normal distribution. 
 
 To keep my environment clean, I've named the parameters `tmp.nsamples` and `tmp.binwidth` and then, at the end of the code chunk, I removed all variables from the environment that have "tmp." in their name using the `ls()` function (which prints out all variables in the environment as a vector), and the `str_subset()` function which filters out only those variables that contain the specified pattern.
@@ -397,7 +273,7 @@ ggplot(data = df.density,
              size = 3)
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 This density shows the sum of the densities of normal distributions that are centered at the observations with the specified bandwidth. 
 
@@ -564,7 +440,7 @@ Caused by error in `fun()`:
 ! could not find function "fun"
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 Here are the same results when specifying a different bandwidth: 
 
@@ -657,10 +533,9 @@ Caused by error in `fun()`:
 ! could not find function "fun"
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
-
-### Cumulative probability distribution
+### Cumulative probability distributions
 
 
 ```r
@@ -676,7 +551,7 @@ ggplot(data = tibble(height = c(150, 210)),
                   expand = F)
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 Let's find the cumulative probability of a particular value. 
 
@@ -726,7 +601,7 @@ ggplot(data = tibble(height = c(150, 210)),
 rm(list = str_subset(string = ls(), pattern = "tmp."))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 Let's illustrate what this would look like using a normal density plot. 
 
@@ -746,7 +621,7 @@ ggplot(data = tibble(height = c(150, 210)),
   coord_cartesian(xlim = c(150, 210))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 ### Inverse cumulative distribution
 
@@ -765,7 +640,7 @@ ggplot(data = tibble(probability = c(0, 1)),
                   expand = F)
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 
 And let's compute the inverse cumulative probability for a particular value. 
 
@@ -814,7 +689,7 @@ ggplot(data = tibble(probability = c(0, 1)),
 rm(list = str_subset(string = ls(), pattern = "tmp."))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 ### Computing probabilities
 
@@ -858,14 +733,13 @@ ggplot(data = tibble(x = c(150, 210)),
 rm(list = str_subset(string = ls(), pattern = "tmp."))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+<img src="02-estimation_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 We find that ~34% of the heights are between 170 and 180 cm. 
 
 #### Via sampling
 
 We can also compute the probability of observing certain events using sampling. We first generate samples from the desired probability distribution, and then use these samples to compute our statistic of interest. 
-
 
 
 ```r
@@ -914,127 +788,40 @@ ggplot(data = df.samples,
 rm(list = str_subset(string = ls(), pattern = "tmp."))
 ```
 
-<img src="02-estimation_files/figure-html/unnamed-chunk-25-1.png" width="672" />
-## Breakout room exercise
-
-### Make the plot
+<img src="02-estimation_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 
-```r
-ggplot(data = tibble(height = c(30, 70)),
-       mapping = aes(x = height)) +
-  stat_function(fun = ~ dgamma(., shape = 50, rate = 1))
-```
-
-<img src="02-estimation_files/figure-html/unnamed-chunk-26-1.png" width="672" />
-
-### Analytic solutions
-
-#### Question: A 60cm tall Penguin claims that no more than 10% are taller than her. Is she correct?
+## Estimating a coin 
 
 
 ```r
-1 - pgamma(60, shape = 50, rate = 1)
+# Example taken from here: http://statsthinking21.org/probability.html#empirical-frequency
+
+set.seed(1) # set the seed so that the outcome is consistent
+nsamples = 50000 # how many flips do we want to make?
+
+# create some random coin flips using the rbinom() function with
+# a true probability of 0.5
+
+df.samples = tibble(trial_number = seq(nsamples), 
+                    outcomes = rbinom(nsamples, 1, 0.5)) %>% 
+  mutate(mean_probability = cumsum(outcomes) / seq_along(outcomes)) %>% 
+  filter(trial_number >= 10) # start with a minimum sample of 10 flips
+
+ggplot(data = df.samples, 
+       mapping = aes(x = trial_number, y = mean_probability)) +
+  geom_hline(yintercept = 0.5, color = "gray", linetype = "dashed") +
+  geom_line() +
+  labs(x = "Number of trials",
+       y = "Estimated probability of heads") +
+  theme_classic() +
+  theme(text = element_text(size = 20))
 ```
 
-```
-[1] 0.08440668
-```
-
-Answer: Yes, she is correct. Only ~ 8.4% of Penguins are taller than her. 
-
-#### Question:  Are there more penguins between 50 and 55cm or between 55 and 65cm?
-
-
-```r
-first_range = pgamma(55, shape = 50, rate = 1) - pgamma(50, shape = 50, rate = 1)
-second_range = pgamma(65, shape = 50, rate = 1) - pgamma(55, shape = 50, rate = 1)
-
-first_range - second_range
-```
-
-```
-[1] 0.04029452
-```
-
-Answer: There are 4% more Penguins between 50 and 55cm than between 55 and 65 cm. 
-
-#### Question: What size is a Penguin who is taller than 75% of the rest?
-
-
-```r
-qgamma(0.75, shape = 50, rate = 1)
-```
-
-```
-[1] 54.57062
-```
-
-Answer: A Penguin who is ~54.6cm tall is taller than 75% of the rest. 
-
-### Sampling solution
-
-Let's just simulate a bunch of Penguins, yay! 
-
-
-```r
-set.seed(1)
-df.penguins = tibble(height = rgamma(n = 100000, shape = 50, rate = 1))
-```
-  
-#### Question: A 60cm tall Penguin claims that no more than 10% are taller than her. Is she correct?
-
-
-```r
-df.penguins %>% 
-  summarize(probability = sum(height > 60) / n())
-```
-
-```
-# A tibble: 1 × 1
-  probability
-        <dbl>
-1      0.0835
-```
-
-Answer: Yes, she is correct. Only ~ 8.3% of Penguins are taller than her. 
-
-#### Question: Are there more penguins between 50 and 55cm or between 55 and 65cm?
-
-
-```r
-df.penguins %>% 
-  summarize(probability = (sum(between(height, 50, 55)) - sum(between(height, 55, 65)))/n())
-```
-
-```
-# A tibble: 1 × 1
-  probability
-        <dbl>
-1      0.0387
-```
-
-Answer: There are 3.9% more Penguins between 50 and 55cm than between 55 and 65 cm. 
-
-#### Question: What size is a Penguin who is taller than 75% of the rest?
-
-
-```r
-df.penguins %>% 
-  arrange(height) %>%
-  slice_head(prop = 0.75) %>% 
-  summarize(height = max(height))
-```
-
-```
-# A tibble: 1 × 1
-  height
-   <dbl>
-1   54.6
-```
-
-Answer: A Penguin who is ~54.6cm tall is taller than 75% of the rest.
-
+<div class="figure">
+<img src="02-estimation_files/figure-html/unnamed-chunk-20-1.png" alt="A demonstration of the law of large numbers." width="672" />
+<p class="caption">(\#fig:unnamed-chunk-20)A demonstration of the law of large numbers.</p>
+</div>
 
 ## Bayesian inference with the normal distribution
 
@@ -1042,7 +829,7 @@ Let's consider the following scenario. You are helping out at a summer camp. Thi
 
 When signing up for the camp, the children were asked for some demographic information including their height in cm. Unsurprisingly, the basketball players tend to be taller on average than the chess players. In fact, the basketball players' height is approximately normally distributed with a mean of 180cm and a standard deviation of 10cm. For the chess players, the mean height is 170cm with a standard deviation of 8cm. 
 
-At the camp site, a child walks over to you and asks you where their gym is. You gage that the child is around 175cm tall. Where should you direct the child to? To the basketball gym, or to the chess gym? 
+At the camp site, a child walks over to you and asks you where their gym is. You gauge that the child is around 175cm tall. Where should you direct the child to? To the basketball gym, or to the chess gym? 
 
 ### Analytic solution
 

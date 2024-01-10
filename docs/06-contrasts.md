@@ -1,4 +1,4 @@
-# Linear model 3
+# Contrasts
 
 ## Learning goals
 

@@ -1,4 +1,4 @@
-# Power analysis
+# Power
 
 ## Learning goals
 

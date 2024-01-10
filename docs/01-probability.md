@@ -40,11 +40,6 @@ We're often not sure whether there's really an effect in our experiments, or how
 We can measure a number, but we know that if we did the experiment again, we would get a slightly different number.
 *Probability theory* gives us a language for talking about these concepts in a less hand-wavy way; it helps us *quantify* uncertainty.
 Probabilities are the conceptual foundation of everything we're going to do in this course, and we're going to start out by learning to look at the phenomena from PSYCH 610 from a different perspective.
-In this notebook, we're going to:
-
-* Define foundational probability concepts like sample spaces, conditional probability, and the law of total probability.
-* Consider data-generating processes for simple scenarios like drawing balls from an urn.
-* Gain intuition for concepts like the law of large numbers.
 
 ## Counting
 
@@ -119,8 +114,8 @@ I've generated the figures below using the `DiagrammeR` package. It's a powerful
 <div class="figure">
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-86e8e546171aa432e165" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-86e8e546171aa432e165">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {11 12 13}\n  2 -> {21 22 23}\n  3 -> {31 32 33}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  11 [label = \"1\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  22 [label = \"2\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  33 [label = \"3\"]\n    \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ea91d679331281d84c01" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ea91d679331281d84c01">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {11 12 13}\n  2 -> {21 22 23}\n  3 -> {31 32 33}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  11 [label = \"1\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  22 [label = \"2\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  33 [label = \"3\"]\n    \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:unnamed-chunk-4)Drawing two marbles out of an urn __with__ replacement.</p>
@@ -129,16 +124,133 @@ I've generated the figures below using the `DiagrammeR` package. It's a powerful
 <div class="figure">
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9d42787cd46d269ae884" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-9d42787cd46d269ae884">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {12 13}\n  2 -> {21 23}\n  3 -> {31 32}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-774fee7107a284813e80" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-774fee7107a284813e80">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 24,\n    fillcolor = lightblue\n    ]\n  \n  # edges between nodes\n  edge [color = black]\n  0 -> {1 2 3}\n  1 -> {12 13}\n  2 -> {21 23}\n  3 -> {31 32}\n  \n  # labels for each node\n  0 [fillcolor = \"black\", width = 0.1]\n  1 [label = \"1\"]\n  2 [label = \"2\"]\n  3 [label = \"3\"]\n  12 [label = \"2\"]\n  13 [label = \"3\"]\n  21 [label = \"1\"]\n  23 [label = \"3\"]\n  31 [label = \"1\"]\n  32 [label = \"2\"]\n  \n  # direction in which arrows are drawn (from left to right)\n  rankdir = LR\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:unnamed-chunk-5)Drawing two marbles out of an urn __without__ replacement.</p>
 </div>
 
-## The random secretary
+## Sampling
 
-A secretary types four letters to four people and addresses the four envelopes. If he inserts the letters at random, each in a different envelope, what is the probability that exactly three letters will go into the right envelope?
+We can also draw *samples* from the urn:
+
+
+```r
+numbers = 1:3
+
+numbers %>% 
+  sample(size = 10,
+         replace = T)
+```
+
+```
+ [1] 3 3 1 2 2 1 2 2 2 2
+```
+
+Use the `prob = ` argument to change the probability with which each number should be drawn. 
+
+
+```r
+numbers = 1:3
+
+numbers %>% 
+  sample(size = 10,
+         replace = T,
+         prob = c(0.8, 0.1, 0.1))
+```
+
+```
+ [1] 1 1 1 1 3 1 1 1 3 1
+```
+
+Make sure to set the seed in order to make your code reproducible. The code chunk below may give a different outcome each time is run. 
+
+
+
+```r
+numbers = 1:5
+
+numbers %>% 
+  sample(5)
+```
+
+```
+[1] 2 3 4 1 5
+```
+
+The chunk below will produce the same outcome every time it's run. 
+
+
+```r
+set.seed(1)
+
+numbers = 1:5
+
+numbers %>% 
+  sample(5)
+```
+
+```
+[1] 1 4 3 5 2
+```
+
+### Drawing rows from a data frame
+
+We can do this with data frames too, imagining our data frame is the urn and the rows are balls. 
+
+
+```r
+set.seed(1)
+n = 10
+df.data = tibble(trial = 1:n,
+                 stimulus = sample(c("flower", "pet"), size = n, replace = T),
+                 rating = sample(1:10, size = n, replace = T))
+```
+
+Sample a given number of rows. 
+
+
+```r
+set.seed(1)
+df.data %>% 
+  slice_sample(n = 6, 
+               replace = T)
+```
+
+```
+# A tibble: 6 × 3
+  trial stimulus rating
+  <int> <chr>     <int>
+1     9 pet           9
+2     4 flower        5
+3     7 flower       10
+4     1 flower        3
+5     2 pet           1
+6     7 flower       10
+```
+
+
+```r
+set.seed(1)
+df.data %>% 
+  slice_sample(prop = 0.5)
+```
+
+```
+# A tibble: 5 × 3
+  trial stimulus rating
+  <int> <chr>     <int>
+1     9 pet           9
+2     4 flower        5
+3     7 flower       10
+4     1 flower        3
+5     2 pet           1
+```
+
+## More complex counting / matching
+
+Imagine a secretary types four letters to four people and addresses the four envelopes. If they insert the letters at random, each in a different envelope, what is the probability that exactly three letters will go into the right envelope?
 
 
 ```r
@@ -180,41 +292,9 @@ This warning is displayed once every 8 hours.
 Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 ```
 
-<img src="01-probability_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="01-probability_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
-## Flipping a coin many times
-
-
-```r
-# Example taken from here: http://statsthinking21.org/probability.html#empirical-frequency
-
-set.seed(1) # set the seed so that the outcome is consistent
-nsamples = 50000 # how many flips do we want to make?
-
-# create some random coin flips using the rbinom() function with
-# a true probability of 0.5
-
-df.samples = tibble(trial_number = seq(nsamples), 
-                    outcomes = rbinom(nsamples, 1, 0.5)) %>% 
-  mutate(mean_probability = cumsum(outcomes) / seq_along(outcomes)) %>% 
-  filter(trial_number >= 10) # start with a minimum sample of 10 flips
-
-ggplot(data = df.samples, 
-       mapping = aes(x = trial_number, y = mean_probability)) +
-  geom_hline(yintercept = 0.5, color = "gray", linetype = "dashed") +
-  geom_line() +
-  labs(x = "Number of trials",
-       y = "Estimated probability of heads") +
-  theme_classic() +
-  theme(text = element_text(size = 20))
-```
-
-<div class="figure">
-<img src="01-probability_files/figure-html/unnamed-chunk-8-1.png" alt="A demonstration of the law of large numbers." width="672" />
-<p class="caption">(\#fig:unnamed-chunk-8)A demonstration of the law of large numbers.</p>
-</div>
-
-## Clue guide to probability
+## Conditional probability
 
 
 ```r
@@ -280,8 +360,6 @@ df.suspects %>%
 </tbody>
 </table>
 
-### Conditional probability
-
 
 ```r
 # conditional probability (via rules of probability)
@@ -297,6 +375,7 @@ df.suspects %>%
                    <dbl>
 1                  0.333
 ```
+
 
 ```r
 # conditional probability (via rejection)
@@ -314,15 +393,13 @@ df.suspects %>%
 1                  0.333
 ```
 
-### Law of total probability
+## Law of total probability
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b380aaed2e9f78476f44" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b380aaed2e9f78476f44">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 9,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"p(female)\"]\n  1 -> 3 [label = \"p(male)\"]\n  2 -> 4 [label = \"p(revolver | female)\"] \n  3 -> 4 [label = \"p(revolver | male)\"]\n  \n  \n\n  # labels for each node\n  1 [label = \"Gender?\"]\n  2 [label = \"If female\nuse revolver?\"]\n  3 [label = \"If male\nuse revolver?\"]\n  4 [label = \"Revolver\nused?\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-aa2faac603ea91129c08" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-aa2faac603ea91129c08">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 9,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"p(female)\"]\n  1 -> 3 [label = \"p(male)\"]\n  2 -> 4 [label = \"p(revolver | female)\"] \n  3 -> 4 [label = \"p(revolver | male)\"]\n  \n  \n\n  # labels for each node\n  1 [label = \"Gender?\"]\n  2 [label = \"If female\nuse revolver?\"]\n  3 [label = \"If male\nuse revolver?\"]\n  4 [label = \"Revolver\nused?\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
-
-## Probability operations
 
 
 ```r
@@ -361,101 +438,6 @@ df.cards %>%
                  <dbl>
 1                 0.25
 ```
-
-## Bayesian reasoning explained
-
-
-```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fdc698dc3cefe25d13a5" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-fdc698dc3cefe25d13a5">{"x":{"diagram":"\ndigraph dot{\n  \n  # general settings for all nodes\n  node [\n    shape = circle,\n    style = filled,\n    color = black,\n    label = \"\"\n    fontname = \"Helvetica\",\n    fontsize = 10,\n    fillcolor = lightblue,\n    fixedsize=true,\n    width = 0.8\n    ]\n  \n  # edges between nodes\n  edge [color = black,\n        fontname = \"Helvetica\",\n        fontsize = 10]\n  1 -> 2 [label = \"ill\"]\n  1 -> 3 [label = \"healthy\"]\n  2 -> 4 [label = \"test +\"] \n  2 -> 5 [label = \"test -\"]\n  3 -> 6 [label = \"test +\"]\n  3 -> 7 [label = \"test -\"]\n  \n\n  # labels for each node\n  1 [label = \"10000\npeople\"]\n  2 [label = \"100\"]\n  3 [label = \"9900\"]\n  4 [label = \"95\"]\n  5 [label = \"5\"]\n  6 [label = \"495\"]\n  7 [label = \"9405\"]\n  \n  rankdir=\"LR\"\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-```
-
-## Getting Bayes right matters
-
-### Bayesian reasoning example
-
-
-```r
-# prior probability of the disease
-p.D = 0.0001
-
-# sensitivity of the test 
-p.T_given_D = 0.999
-
-# specificity of the test 
-p.notT_given_notD = 0.999
-p.T_given_notD = (1 - p.notT_given_notD)
-
-# posterior given a positive test result 
-p.D_given_T = (p.T_given_D * p.D) / ((p.T_given_D * p.D) + (p.T_given_notD * (1-p.D)))
-
-p.D_given_T
-```
-
-```
-[1] 0.0908347
-```
-
-### Bayesian reasoning example (COVID rapid test)
-
-https://pubmed.ncbi.nlm.nih.gov/34242764/#:~:text=The%20overall%20sensitivity%20of%20the,%25%20CI%2024.4%2D65.1).
-
-
-```r
-# prior probability of the disease
-p.D = 0.1 
-
-# sensitivity covid rapid test
-p.T_given_D = 0.653
-
-# specificity of covid rapid test
-p.notT_given_notD = 0.999
-
-p.T_given_notD = (1 - p.notT_given_notD)
-
-# posterior given a positive test result 
-p.D_given_T = (p.T_given_D * p.D) / ((p.T_given_D * p.D) + (p.T_given_notD * (1-p.D)))
-
-# posterior given a negative test result 
-p.D_given_notT = ((1-p.T_given_D) * p.D) / (((1-p.T_given_D) * p.D) + ((1-p.T_given_notD) * (1-p.D)))
-
-str_c("Probability of COVID given a positive test: ", round(p.D_given_T * 100, 1), "%")
-```
-
-```
-[1] "Probability of COVID given a positive test: 98.6%"
-```
-
-```r
-str_c("Probability of COVID given a negative test: ", round(p.D_given_notT * 100, 1), "%")
-```
-
-```
-[1] "Probability of COVID given a negative test: 3.7%"
-```
-
-### Most people in the hospital are vaccinated
-
-
-```r
-# probability of being vaccinated 
-p.V = 0.8 
-
-# likelihood of hospital 
-p.H_given_V = 0.2
-p.H_given_notV = 0.5
-
-# posterior probability 
-p.V_given_H = (p.H_given_V * p.V) / ((p.H_given_V * p.V) + (p.H_given_notV * (1-p.V)))
-
-p.V_given_H
-```
-
-```
-[1] 0.6153846
-```
-
-
 
 ## Additional resources
 
