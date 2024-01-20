@@ -528,7 +528,8 @@ animate(p,
 ### Books and chapters
 
 - [Bayes rules book](https://www.bayesrulesbook.com/)
-
+- [Bayes' theorem in three panels](https://www.tjmahr.com/bayes-theorem-in-three-panels/)
+- [Bayes theorem and making probability intuitive](https://www.youtube.com/watch?v=HZGCoVF3YvM&feature=youtu.be)
 
 ## Session info
 

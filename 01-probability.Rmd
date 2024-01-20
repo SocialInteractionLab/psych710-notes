@@ -358,9 +358,7 @@ df.cards %>%
 
 ### Misc
 
-- [Bayes' theorem in three panels](https://www.tjmahr.com/bayes-theorem-in-three-panels/)
-- [Statistics 110: Probability; course at Harvard](https://projects.iq.harvard.edu/stat110)  
-- [Bayes theorem and making probability intuitive](https://www.youtube.com/watch?v=HZGCoVF3YvM&feature=youtu.be)
+- [Statistics 110: Probability; course at Harvard](https://projects.iq.harvard.edu/stat110)
 
 ## Session info
 

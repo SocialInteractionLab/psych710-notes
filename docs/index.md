@@ -1,7 +1,7 @@
 --- 
 title: "Psych 710: Statistical Methods II"
 author: "Robert Hawkins"
-date: "2024-01-11"
+date: "2024-01-20"
 book_filename: "psych710"
 language:
   ui:
